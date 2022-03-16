@@ -22,15 +22,15 @@ jobs:
     - name: Log in to registry
       uses: docker/login-action@v1
       with:
-        registry: https://adoptitcontainerregistry.azurecr.io/
-        username: ${{ secrets.AzureAppService_ContainerUsername_a1790a49fe794adb81fd4adf1000211d }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_a15f71a781534a63a42f3e7c7e668e4e }}
+        registry: https://adoptitcontainers.azurecr.io/
+        username: ${{ secrets.AzureAppService_ContainerUsername_04807e3177ca4b20823e47c7d8806554 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_df7fb851133d4b8d8d9e3c2ba4d02346 }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: adoptitcontainerregistry.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_a1790a49fe794adb81fd4adf1000211d }}/adoptitimg:${{ github.sha }}
+        tags: adoptitcontainers.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_04807e3177ca4b20823e47c7d8806554 }}/adoptit:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'adoptit'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_7a4f12ccc5854399943cc1f09e963ad6 }}
-        images: 'adoptitcontainerregistry.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_a1790a49fe794adb81fd4adf1000211d }}/adoptitimg:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_864bf09772a1407db51ebb8495a82377 }}
+        images: 'adoptitcontainers.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_04807e3177ca4b20823e47c7d8806554 }}/adoptit:${{ github.sha }}'
