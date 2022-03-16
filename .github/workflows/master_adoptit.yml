@@ -15,8 +15,6 @@ jobs:
     
     steps:
     - uses: actions/checkout@v2
-    
-    - name: set lower case owner name
 
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v1
