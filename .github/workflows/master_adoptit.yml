@@ -16,7 +16,9 @@ jobs:
     steps:
     - name: set lower case owner name
       run: |
-          echo "DOCKER_IMAGE=ghcr.io/${OWNER,,}/ossp_flaskapp" >>${GITHUB_ENV}
+        echo "OWNER_LC=${OWNER,,}" >>${GITHUB_ENV}
+      env:
+        OWNER: '${{ github.repository_owner }}'
     
     - uses: actions/checkout@v2
 
