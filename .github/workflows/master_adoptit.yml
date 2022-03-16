@@ -30,7 +30,7 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: adoptitcontainerregistry.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_57ce081124a24d0bb661a32cfae8bb74 }}/adoptit-image:${{ github.sha }}
+        tags: test
         file: ./Dockerfile
 
   deploy:
