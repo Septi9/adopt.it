@@ -31,7 +31,7 @@ jobs:
       with:
         push: true
         tags: adoptitcontainers.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_04807e3177ca4b20823e47c7d8806554 }}/adoptit:${{ github.sha }}
-        file: ./Dockerfile
+        file: ./Back-end/Dockerfile
 
   deploy:
     runs-on: ubuntu-latest
