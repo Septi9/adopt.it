@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ master ]
 env:
-   DOCKER_IMAGE_NAME: 'adoptit'
+  DOCKER_IMAGE_NAME: 'adoptit'
 jobs:
 
   build:
@@ -14,7 +14,14 @@ jobs:
     
 
     steps:
-    - name: Check out code
-      uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: docker build . -f ./Back-end/Dockerfile --tag '${{env.DOCKER_IMAGE_NAME}}':v1
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: Build the Docker image
+        run: docker build . -f ./Back-end/Dockerfile --tag '${{env.DOCKER_IMAGE_NAME}}':v1
+
+      - name: Docker login
+        run: docker login --username '${{secrets.DOCKER_LOGIN}}' --pasword '${{secrets.DOCKER_PASSWORD}}'
+      - name: Tag the Docker image
+        run: docker tag '${{env.DOCKER_IMAGE_NAME}}':v1 '${{secrets.DOCKER_LOGIN}}'/'${{env.DOCKER_IMAGE_NAME}}':v1
+      - name: Push the Docker image
+        run: docker push '${{secrets.DOCKER_LOGIN}}'/'${{env.DOCKER_IMAGE_NAME}}':v1
