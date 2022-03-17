@@ -5,8 +5,7 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-env:
-   DOCKER_IMAGE_NAME: 'adoptit'
+    
 jobs:
 
   build:
@@ -16,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag '${{env.DOCKER_IMAGE_NAME}}':v1
+      run: docker build . --file Dockerfile --tag adoptit:v1
