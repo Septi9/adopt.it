@@ -7,7 +7,6 @@ on:
     branches: [ master ]
 env:
    DOCKER_IMAGE_NAME: 'adoptit'
-
 jobs:
 
   build:
@@ -17,7 +16,5 @@ jobs:
     steps:
     - name: Check out code
       uses: actions/checkout@v2
-    - name: change path
-      run: cd /Back-end
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag '${{env.DOCKER_IMAGE_NAME}}':v1
+      run: docker build . -f ./Back-end/Dockerfile --tag '${{env.DOCKER_IMAGE_NAME}}':v1
