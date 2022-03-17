@@ -19,6 +19,11 @@ public class Main implements CommandLineRunner {
         SpringApplication.run(Main.class, args);
     }
 
+    @GetMapping("/")
+    public String getFirst() {
+        return "Witamy na naszej stronie! ADOPT.IT";
+    }
+
     @GetMapping("adoptit-image")
     public String get() {
         return "Witamy na naszej stronie! ADOPT.IT";
