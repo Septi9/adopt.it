@@ -19,4 +19,4 @@ jobs:
     - name: change path
       run: cd Back-end 
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag '${{env.DOCKER_IMAGE_NAME}}':v1
+      run: docker build . --file Dockerfile.Dockerfile --tag '${{env.DOCKER_IMAGE_NAME}}':v1
