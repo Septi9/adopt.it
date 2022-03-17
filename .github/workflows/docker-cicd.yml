@@ -14,9 +14,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-      with:
-        context: adopt.it/Back-end
-        file: adopt.it/Back-end/Dockerfile
+    - name: Check out code
+      uses: actions/checkout@v2
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag '${{env.DOCKER_IMAGE_NAME}}':v1
