@@ -29,11 +29,11 @@ jobs:
 
       - name: Azure Login
         uses: azure/login@v1
-          with:
-            creds: ${{ secrets.AZURE_CREDENTIALS }}
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-            - name: Azure WebApp Deployment
-              uses: Azure/webapps-deploy@v2
-              with:
-                app-name: '${{env.AZURE_WEB_APP}}'
-                images: '${{secrets.DOCKER_LOGIN}}/${{env.DOCKER_IMAGE_NAME}}:v1'
+      - name: Azure WebApp Deployment
+        uses: Azure/webapps-deploy@v2
+        with:
+          app-name: '${{env.AZURE_WEB_APP}}'
+          images: '${{secrets.DOCKER_LOGIN}}/${{env.DOCKER_IMAGE_NAME}}:v1'
