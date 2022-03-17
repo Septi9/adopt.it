@@ -15,5 +15,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      with:
+        context: adopt.it/Back-end
+        file: adopt.it/Back-end/Dockerfile
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag '${{env.DOCKER_IMAGE_NAME}}':v1
