@@ -18,6 +18,6 @@ jobs:
     - name: Check out code
       uses: actions/checkout@v2
     - name: change path
-      run: cd /Back-end/
+      run: cd /Back-end
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag '${{env.DOCKER_IMAGE_NAME}}':v1
