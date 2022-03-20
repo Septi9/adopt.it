@@ -17,11 +17,11 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v2
-      - name: Build the Docker image
-        run: docker build . -f ./Back-end/Dockerfile --tag '${{env.DOCKER_IMAGE_NAME}}':v1
-
+      
       - name: Docker login
         run: docker login -u '${{secrets.DOCKER_LOGIN}}' -p '${{secrets.DOCKER_PASSWORD}}'
+      - name: Build the Docker image
+        run: docker build . -f ./Back-end/Dockerfile --tag '${{env.DOCKER_IMAGE_NAME}}':v1
       - name: Tag the Docker image
         run: docker tag '${{env.DOCKER_IMAGE_NAME}}':v1 '${{secrets.DOCKER_LOGIN}}'/'${{env.DOCKER_IMAGE_NAME}}':v1
       - name: Push the Docker image
