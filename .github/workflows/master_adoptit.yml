@@ -19,7 +19,7 @@ jobs:
       uses: actions/checkout@v2
       
     - name: Clean maven package
-      run: mvn clean package
+      run: mvn clean package -f ./Back-end/pom.xml
       
     - name: Build package
       run: mvn package
