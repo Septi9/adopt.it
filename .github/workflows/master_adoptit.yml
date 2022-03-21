@@ -24,7 +24,7 @@ jobs:
         java-version: 17
             
     - name: Clean package
-      run: mvn -u clean package -f ./Back-end/pom.xml        
+      run: mvn -U clean package -f ./Back-end/pom.xml        
             
     - name: Build package
       run: mvn package -f ./Back-end/pom.xml
