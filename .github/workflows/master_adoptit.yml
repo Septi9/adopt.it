@@ -17,12 +17,9 @@ jobs:
     steps:
     - name: Check out code
       uses: actions/checkout@v2
-      
-    - name: Clean maven package
-      run: mvn clean package -Dmaven.test.skip=true -f ./Back-end/pom.xml
-      
+            
     - name: Build package
-      run: mvn package -f ./Back-end/pom.xml
+      run: mvn -B package -f ./Back-end/pom.xml
 
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v1
