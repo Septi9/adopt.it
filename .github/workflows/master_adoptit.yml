@@ -27,7 +27,7 @@ jobs:
       run: mvn -U clean package -f ./Back-end/pom.xml        
             
     - name: Build package
-      run: mvn package -f ./Back-end/pom.xml
+      run: mvn -b package -f ./Back-end/pom.xml
 
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v1
