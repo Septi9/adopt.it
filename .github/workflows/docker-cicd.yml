@@ -20,9 +20,11 @@ jobs:
       - name: Docker login
         run: docker login -u '${{secrets.DOCKER_LOGIN}}' -p '${{secrets.DOCKER_PASSWORD}}'
       - name: Build the Docker image
-        run: docker build . -f ./Back-end/Dockerfile --tag monzaj19/'${{env.DOCKER_IMAGE_NAME}}':$(date +%s)
+        run: docker build . -f ./Back-end/Dockerfile --tag '${{env.DOCKER_IMAGE_NAME}}':latest
+      - name: Tag the Docker image
+        run: docker tag '${{env.DOCKER_IMAGE_NAME}}':latest '${{secrets.DOCKER_LOGIN}}'/'${{env.DOCKER_IMAGE_NAME}}':latest
       - name: Push the Docker image
-        run: docker push '${{secrets.DOCKER_LOGIN}}'/'${{env.DOCKER_IMAGE_NAME}}'
+        run: docker push '${{secrets.DOCKER_LOGIN}}'/'${{env.DOCKER_IMAGE_NAME}}':latest
 
       - name: Azure Login
         uses: azure/login@v1
@@ -33,4 +35,4 @@ jobs:
         uses: Azure/webapps-deploy@v2
         with:
           app-name: '${{env.AZURE_WEB_APP}}'
-          images: '${{secrets.DOCKER_LOGIN}}/${{env.DOCKER_IMAGE_NAME}}:v1'
+          images: '${{secrets.DOCKER_LOGIN}}/${{env.DOCKER_IMAGE_NAME}}:latest'
