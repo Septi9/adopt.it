@@ -21,12 +21,12 @@ public class Main implements CommandLineRunner {
 
     @GetMapping("/")
     public String getFirst() {
-        return "Cześć tu Kuba";
+        return "Cześć tu Kuba!!!";
     }
 
     @GetMapping("adoptit-image")
     public String get() {
-        return "Witamy!";
+        return "Witamy 123";
     }
 
     @Override
