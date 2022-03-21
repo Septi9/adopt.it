@@ -21,7 +21,7 @@ public class Main implements CommandLineRunner {
 
     @GetMapping("/")
     public String getFirst() {
-        return "Witamy na naszej stronie! ADOPT.IT";
+        return "Cześć!";
     }
 
     @GetMapping("adoptit-image")
