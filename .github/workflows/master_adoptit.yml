@@ -26,7 +26,7 @@ jobs:
     - name: Clean package
       run: mvn clean install \
           -q \
-          -Dmaven.test.skip=true    
+          -Dmaven.test.skip=true \ -f ./Back-end/pom.xml 
             
     - name: Build package
       run: mvn -q -B package -f ./Back-end/pom.xml
