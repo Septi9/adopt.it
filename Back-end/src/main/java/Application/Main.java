@@ -26,7 +26,7 @@ public class Main implements CommandLineRunner {
 
     @GetMapping("adoptit-image")
     public String get() {
-        return "Witamy na naszej stronie! ADOPT.IT";
+        return "Witamy!";
     }
 
     @Override
