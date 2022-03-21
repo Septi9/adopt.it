@@ -17,6 +17,12 @@ jobs:
     steps:
     - name: Check out code
       uses: actions/checkout@v2
+      
+    - name: Clean maven package
+      run: mvn clean package
+      
+    - name: Build package
+      run: mvn package
 
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v1
