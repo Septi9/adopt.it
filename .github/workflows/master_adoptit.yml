@@ -15,10 +15,10 @@ jobs:
   build:
     runs-on: 'ubuntu-latest'
     
-    strategy:
-      matrix:
-        maven: [ '3.8.5' ]
-        java: [ '17' ]
+#     strategy:
+#       matrix:
+#         maven: [ '3.8.5' ]
+#         java: [ '17' ]
 
     steps:
     - name: Check out code
@@ -29,18 +29,15 @@ jobs:
       with:
         java-version: 17
         
-    - name: GitHub Action for Maven
-      uses: s4u/setup-maven-action@v1.2.1
-      with:
-        java-version: ${{ matrix.java }}
-        maven-version: ${{ matrix.maven }}
+#     - name: GitHub Action for Maven
+#       uses: s4u/setup-maven-action@v1.2.1
+#       with:
+#         java-version: ${{ matrix.java }}
+#         maven-version: ${{ matrix.maven }}
 
     - name: Clean package
       run: mvn -B clean package -f ./Back-end/pom.xml -DskipTests=true
-      
-    - name: Test Maven
-      run: mvn test -f ./Back-end/pom.xml
-
+    
 #     - name: Build package
 #       run: mvn package -f ./Back-end/pom.xml
 
@@ -69,6 +66,8 @@ jobs:
 #       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
 #     steps:
+    - name: Build with Maven
+      run: mvn -B package --file ./Back-end/pom.xml
     - name: Deploy to Azure Web App
       id: deploy-to-webapp
       uses: azure/webapps-deploy@v2
@@ -76,4 +75,5 @@ jobs:
         app-name: 'adoptit'
         slot-name: 'production'
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE}}
+        package: ./Back-end/target/*.jar
         images: 'index.docker.io/monzaj19/${{env.DOCKER_IMAGE_NAME}}:${{ github.sha }}'
