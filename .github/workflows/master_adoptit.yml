@@ -28,8 +28,8 @@ jobs:
 
     - name: Build package
       run: |
-          mvn clean
-          mvn install
+          mvn clean --file ./Back-end/pom.xml
+          mvn install --file ./Back-end/pom.xml
           mvn package --file ./Back-end/pom.xml
 
    #   run: mvn package -f ./Back-end/pom.xml
