@@ -75,5 +75,4 @@ jobs:
         app-name: 'adoptit'
         slot-name: 'production'
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE}}
-        package: ./Back-end/target/*.jar
         images: 'index.docker.io/monzaj19/${{env.DOCKER_IMAGE_NAME}}:${{ github.sha }}'
