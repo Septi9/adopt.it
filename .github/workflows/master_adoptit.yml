@@ -66,8 +66,6 @@ jobs:
 #       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
 #     steps:
-    - name: Build with Maven
-      run: mvn -B package --file ./Back-end/pom.xml
     - name: Deploy to Azure Web App
       id: deploy-to-webapp
       uses: azure/webapps-deploy@v2
