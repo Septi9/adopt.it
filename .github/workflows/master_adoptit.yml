@@ -21,14 +21,13 @@ jobs:
     - name: Set up JDK
       uses: actions/setup-java@v1
       with:
-        java-version: 17      
+        java-version: 17
 
     - name: Clean package
       run: mvn clean -f ./Back-end/pom.xml
 
     - name: Build package
-      run: mvn -B package -f ./Back-end/pom.xml
- 
+      run: mvn package -f ./Back-end/pom.xml
 
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v1
