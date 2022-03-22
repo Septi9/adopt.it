@@ -24,7 +24,7 @@ jobs:
         java-version: 17
 
     - name: Clean package
-      run: mvn -B clean package -f ./Back-end/pom.xml -DskipTests
+      run: mvn -B clean package -f ./Back-end/pom.xml -DskipTests=true
 
 #     - name: Build package
 #       run: mvn package -f ./Back-end/pom.xml
