@@ -10,9 +10,14 @@ on:
 env:
   DOCKER_IMAGE_NAME: 'adoptit'
   AZURE_WEB_APP: 'adoptit'
+
 jobs:
   build:
     runs-on: 'ubuntu-latest'
+    
+    strategy:
+      matrix:
+        maven: [ '3.8.5' ]
 
     steps:
     - name: Check out code
@@ -22,6 +27,11 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 17
+        
+    - name: GitHub Action for Maven
+      uses: s4u/setup-maven-action@v1.2.1
+      with:
+        maven-version: ${{ matrix.maven }}
 
     - name: Clean package
       run: mvn -B clean package -f ./Back-end/pom.xml -DskipTests=true
