@@ -22,16 +22,17 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 17
+        
+    - name: Download Maven build artifact
+      uses: actions/download-artifact@v2
+      with:
+        name: backend-1.0-SNAPSHOT.jar
+        path: ./Back-end/target
 
   #  - name: Clean package
   #   run: mvn clean -f ./Back-end/pom.xml
 
     - name: Build package
-      run: |
-          mvn clean --file ./Back-end/pom.xml
-          mvn install --file ./Back-end/pom.xml
-          mvn package --file ./Back-end/pom.xml
-
    #   run: mvn package -f ./Back-end/pom.xml
 
     - name: Set up Docker Buildx
