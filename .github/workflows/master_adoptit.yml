@@ -24,10 +24,10 @@ jobs:
         java-version: 17
 
     - name: Clean package
-      run: mvn clean -f ./Back-end/pom.xml
+      run: mvn -B clean package -f ./Back-end/pom.xml -DskipTests
 
-    - name: Build package
-      run: mvn package -f ./Back-end/pom.xml
+#     - name: Build package
+#       run: mvn package -f ./Back-end/pom.xml
 
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v1
