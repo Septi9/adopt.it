@@ -50,7 +50,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: jar-artifact
-        path: ${{ github.workspace }}/./Back-end/target/*.jar
+        path: ${{ github.workspace }}/Back-end/target/*.jar
         retention-days: 1
 
 
