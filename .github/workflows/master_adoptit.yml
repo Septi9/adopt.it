@@ -37,6 +37,9 @@ jobs:
 
     - name: Clean package
       run: mvn -B clean package -f ./Back-end/pom.xml -DskipTests=true
+      
+    - name: Test Maven
+      run: mvn test -f ./Back-end/pom.xml
 
 #     - name: Build package
 #       run: mvn package -f ./Back-end/pom.xml
