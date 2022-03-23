@@ -44,7 +44,9 @@ jobs:
       run: mvn -B compile --f ./Back-end/pom.xml
 
     - name: Build a package
-      run: mvn -B package -f ./Back-end/pom.xml
+      run: |
+       mvn -B package -f ./Back-end/pom.xml
+       mkdir staging && cp ./Back-end/target/*.jar staging
 
     - name: Set up cache for Maven
       uses: actions/cache@v2
