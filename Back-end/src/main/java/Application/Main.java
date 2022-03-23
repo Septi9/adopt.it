@@ -24,7 +24,7 @@ public class Main implements CommandLineRunner {
         return "Witamy ponownie";
     }
     
-    @GetMapping("adopt")
+    @GetMapping("contact")
     public String get() {
         return "witamy w adopt";
     }
