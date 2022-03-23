@@ -6,7 +6,7 @@
 
 FROM openjdk:17 AS build  
 COPY src ./Back-end/src
-COPY pom.xml ./Back-end/
+COPY ./Back-end/pom.xml
 RUN mvn -f /Back-end/pom.xml clean package
 
 FROM gcr.io/distroless/java  
