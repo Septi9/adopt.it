@@ -14,11 +14,6 @@ env:
 jobs:
   build:
     runs-on: 'ubuntu-latest'
-    
-#     strategy:
-#       matrix:
-#         maven: [ '3.8.5' ]
-#         java: [ '17' ]
 
     steps:
     - name: Check out code
@@ -28,23 +23,9 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 17
-        
-#     - name: GitHub Action for Maven
-#       uses: s4u/setup-maven-action@v1.2.1
-#       with:
-#         java-version: ${{ matrix.java }}
-#         maven-version: ${{ matrix.maven }}
 
 #     - name: Clean package
 #       run: mvn -B clean package -f ./Back-end/pom.xml -DskipTests=true
-    
-#     - name: Build package
-#       run: mvn package -f ./Back-end/pom.xml
-    - name: Compile
-      run: mvn -B compile --f ./Back-end/pom.xml
-
-    - name: Build a package
-      run: mvn -B package -f ./Back-end/pom.xml
 
     - name: Temporarily save jar artifact
       uses: actions/upload-artifact@v2
@@ -71,14 +52,7 @@ jobs:
         tags: index.docker.io/monzaj19/${{env.DOCKER_IMAGE_NAME}}:${{ github.sha }}
         file: ./Back-end/Dockerfile
 
-#   deploy:
-#     runs-on: ubuntu-latest
-#     needs: build
-#     environment:
-#       name: 'production'
-#       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
-#     steps:
     - name: Deploy to Azure Web App
       id: deploy-to-webapp
       uses: azure/webapps-deploy@v2
