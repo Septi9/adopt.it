@@ -46,12 +46,18 @@ jobs:
     - name: Build a package
       run: mvn -B package -f ./Back-end/pom.xml
 
-    - name: Temporarily save jar artifact
+    - name: Set up cache for Maven
+      uses: actions/cache@v2
+      with:
+        path: ~/.m2
+        key: ${{ runner.os }}-m2-${{hashFiles('./Back-end/pom.xml')}}
+        restore-keys: ${{ runner.os }}-m2
+        
+    - name: Persist workflow data as artifacts
       uses: actions/upload-artifact@v2
       with:
-        name: jar-artifact
-        path: ${{ github.workspace }}/Back-end/target/*.jar
-        retention-days: 1
+        name: github-actions-artifact
+        path: staging
 
 
     - name: Set up Docker Buildx
