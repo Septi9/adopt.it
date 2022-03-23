@@ -5,8 +5,8 @@
 
 
 FROM maven:3.5-jdk-8 AS build 
-COPY ./Back-end/src src
-COPY ./Back-end/pom.xml pom.xml
+COPY ./Back-end src
+COPY ./Back-end pom.xml
 RUN mvn -B package -f ./Back-end/pom.xml
 
 FROM gcr.io/distroless/java  
