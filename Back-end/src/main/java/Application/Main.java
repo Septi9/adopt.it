@@ -25,7 +25,7 @@ public class Main implements CommandLineRunner {
     }
     
     @GetMapping("contact")
-    public String get() {
+    public String getNew() {
         return "witamy w adopt";
     }
 
