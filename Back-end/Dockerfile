@@ -4,9 +4,7 @@
 #ENTRYPOINT ["java", "-jar", "/app.jar"]
 
 
-FROM openjdk:17 AS build  
-RUN apt-get update
-RUN apt-get install -y maven
+FROM maven:3.5-jdk-8 AS build 
 COPY ./Back-end/src src
 COPY ./Back-end/pom.xml pom.xml
 RUN mvn -B package -f /Back-end/pom.xml
