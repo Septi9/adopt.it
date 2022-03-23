@@ -15,11 +15,6 @@ jobs:
   build:
     runs-on: 'ubuntu-latest'
 
-    #     strategy:
-    #       matrix:
-    #         maven: [ '3.8.5' ]
-    #         java: [ '17' ]
-
     steps:
       - name: Check out code
         uses: actions/checkout@v2
@@ -29,30 +24,14 @@ jobs:
         with:
           java-version: 17
 
-      #     - name: GitHub Action for Maven
-      #       uses: s4u/setup-maven-action@v1.2.1
-      #       with:
-      #         java-version: ${{ matrix.java }}
-      #         maven-version: ${{ matrix.maven }}
-
       #     - name: Clean package
       #       run: mvn -B clean package -f ./Back-end/pom.xml -DskipTests=true
 
       #     - name: Build package
       #       run: mvn package -f ./Back-end/pom.xml
-      - name: Compile
-        run: mvn -B compile --f ./Back-end/pom.xml
 
       - name: Build a package
         run: mvn -B package -f ./Back-end/pom.xml
-
-      - name: Temporarily save jar artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: jar-artifact
-          path: ${{ github.workspace }}/Back-end/target/*.jar
-          retention-days: 1
-
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
