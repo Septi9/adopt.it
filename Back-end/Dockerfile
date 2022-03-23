@@ -4,7 +4,7 @@
 #ENTRYPOINT ["java", "-jar", "/app.jar"]
 
 
-FROM maven:3.8.5-jdk-17 AS build  
+FROM openjdk:17 AS build  
 COPY src ./Back-end/src
 COPY pom.xml ./Back-end/
 RUN mvn -f /Back-end/pom.xml clean package
