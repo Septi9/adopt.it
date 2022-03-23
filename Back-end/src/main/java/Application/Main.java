@@ -23,6 +23,11 @@ public class Main implements CommandLineRunner {
     public String getFirst() {
         return "Witamy ponownie";
     }
+    
+    @GetMapping("adopt")
+    public String get() {
+        return "witamy w adopt";
+    }
 
     @GetMapping("adoptit-image")
     public String get() {
