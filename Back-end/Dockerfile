@@ -7,7 +7,7 @@
 FROM openjdk:17 AS build  
 COPY ./Back-end/src src
 COPY ./Back-end/pom.xml pom.xml
-RUN mvn -f ./Back-end/pom.xml clean package
+RUN mvn -B package -f ./Back-end/pom.xml
 
 FROM gcr.io/distroless/java  
 COPY --from=build ./Back-end/target/backend-1.0-SNAPSHOT.jar app.jar 
