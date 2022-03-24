@@ -7,7 +7,7 @@
 #
 FROM maven:3.8.4-jdk-11 AS build
 COPY src ./Back-end/src
-COPY pom.xml ./Back-end
+COPY ./Back-end/pom.xml ./Back-end
 RUN mvn clean package -f ./Back-end/pom.xml
 
 #
