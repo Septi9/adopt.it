@@ -21,7 +21,7 @@ public class Main implements CommandLineRunner {
 
     @GetMapping("/")
     public String getFirst() {
-        return "Witamy ponownie";
+        return "Tym razem działaaaa <3";
     }
     
     @GetMapping("contact")
