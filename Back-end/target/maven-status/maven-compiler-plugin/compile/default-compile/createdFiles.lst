@@ -1,1 +1,5 @@
+Application\Controller\Controller.class
+Application\registration\RegistrationRepository.class
+Application\registrationService\RegistrationService.class
 Application\Main.class
+Application\user\User.class
