@@ -5,9 +5,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface RegistrationRepository extends JpaRepository<User, Integer> {
 
-    User findByEmailId(String emailId);
+    public User findByEmailId(String emailId);
+    public User findByEmailIdAndAccountPassword(String emailId, String password);
 
-//    User findByEmailIdAndPassword(String emailId, String accountPassword);
+
 
 
 }
