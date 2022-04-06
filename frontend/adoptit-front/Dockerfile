@@ -1,9 +1,10 @@
 FROM node:latest
-RUN addgroup app && adduser -S -G app app
-USER app
+RUN mkdir -p /app
 WORKDIR /app
-COPY --chown=node:node package*.json ./
+COPY package.json .
+COPY package-lock.json .
 RUN npm install
-COPY --chown=node:node . .
-CMD [ "npm", "start" ]
+RUN npm run build
+COPY . ./
+CMD ["npm", "start"]
 
