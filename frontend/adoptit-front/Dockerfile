@@ -1,5 +1,5 @@
 FROM node:latest
-WORKDIR /usr/src/app
+WORKDIR ./adoptit-front
 COPY package*.json ./
 RUN npm install
 COPY . .
