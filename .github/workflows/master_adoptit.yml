@@ -31,7 +31,7 @@ jobs:
       with:
         push: true
         tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_3bf4955121cb447489702e6b376dbb95 }}/monzaj19/adoptitfrontend:${{ github.sha }}
-        file: ./Dockerfile
+        file: ./adoptit-front/Dockerfile
 
   deploy:
     runs-on: ubuntu-latest
