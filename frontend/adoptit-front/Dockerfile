@@ -1,5 +1,5 @@
 FROM node:latest
-WORKDIR /app
+#WORKDIR /app
 COPY . .
 RUN npm --verbose install
 RUN npm run build
