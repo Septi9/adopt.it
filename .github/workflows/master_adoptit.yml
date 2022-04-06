@@ -31,7 +31,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: npm install, build, and test example
-      working-directory: ./adoptit-front
+      working-directory: ./frontend/adoptit-front
       run: |
           npm install
           npm run build --if-present
