@@ -29,7 +29,12 @@ jobs:
         registry: https://index.docker.io/v1/
         username: ${{ secrets.DOCKER_LOGIN }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-    
+
+    - name: npm install, build, and test example
+      working-directory: ./adoptit-front
+      run: |
+          npm install
+          npm run build --if-present
     
 
     - name: Build and push Angular Image
