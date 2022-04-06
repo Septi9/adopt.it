@@ -14,12 +14,11 @@ env:
   DOCKER_HUB_USERNAME: monzaj19
 jobs:
   build:
-    name: Build, push, and deploy
     runs-on: 'ubuntu-latest'
 
     steps:
     - name: Check out code
-    - uses: actions/checkout@v2
+      uses: actions/checkout@v2
 
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v1
