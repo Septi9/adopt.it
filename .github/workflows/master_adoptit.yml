@@ -71,5 +71,4 @@ jobs:
         app-name: 'adoptit'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_6fc9c2e7434348269c64eafa1cbeae2a }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_3bf4955121cb447489702e6b376dbb95 }}/monzaj19/adoptitfrontend:${{ github.sha }}',
-                'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_3bf4955121cb447489702e6b376dbb95 }}/monzaj19/adoptit:${{ github.sha }}'
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_3bf4955121cb447489702e6b376dbb95 }}/monzaj19/adoptitfrontend:${{ github.sha }}'
