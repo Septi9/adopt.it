@@ -8,7 +8,7 @@
 #CMD ["npm", "start"]
 
 FROM node:latest AS build
-WORKDIR /app
+#WORKDIR /app
 COPY . ./
 COPY package*.json ./
 
@@ -18,5 +18,5 @@ RUN npm install -g @angular/cli@13.0.2 && \
 COPY . .
 
 FROM nginx:1.17.1-alpine
-WORKDIR /app
+#WORKDIR /app
 COPY --from=build /app/dist/ui /usr/share/nginx/html
