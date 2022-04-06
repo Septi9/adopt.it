@@ -1,9 +1,9 @@
 FROM node:latest
-WORKDIR /app/
-RUN addgroup app && adduser -S -G app app && chown -R app /app
+RUN addgroup app && adduser -S -G app app
 USER app
-COPY package*.json ./
-RUN npm i
-COPY . ./
+WORKDIR /app
+COPY --chown=node:node package*.json ./
+RUN npm install
+COPY --chown=node:node . .
 CMD [ "npm", "start" ]
 
