@@ -8,19 +8,26 @@ import { RegistrationComponent } from './registration/registration.component';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from "@angular/common/http";
 import { LoginsuccessComponent } from './loginsuccess/loginsuccess.component';
+import { MainpageComponent } from './mainpage/mainpage.component';
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegistrationComponent,
-    LoginsuccessComponent
+    LoginsuccessComponent,
+    MainpageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot([
+      { path: '', pathMatch: 'full', redirectTo: 'home' },
+      { path: 'home', component: MainpageComponent },
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
