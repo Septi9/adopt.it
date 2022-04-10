@@ -10,6 +10,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { LoginsuccessComponent } from './loginsuccess/loginsuccess.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
 import {RouterModule} from "@angular/router";
+import { RegistersuccessComponent } from './registersuccess/registersuccess.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {RouterModule} from "@angular/router";
     LoginComponent,
     RegistrationComponent,
     LoginsuccessComponent,
-    MainpageComponent
+    MainpageComponent,
+    RegistersuccessComponent
   ],
   imports: [
     BrowserModule,
