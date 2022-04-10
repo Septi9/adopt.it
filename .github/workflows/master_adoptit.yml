@@ -30,13 +30,6 @@ jobs:
         username: ${{ secrets.DOCKER_LOGIN }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
-    - name: npm install, build, and test example
-      working-directory: ./frontend/adoptit-front
-      run: |
-          npm install
-          npm run build --if-present
-    
-
     - name: Build and push Angular Image
       id: angular_docker_build
       uses: docker/build-push-action@v2
@@ -53,13 +46,8 @@ jobs:
         push: true
         tags: index.docker.io/${{ env.DOCKER_HUB_USERNAME }}/${{ env.SPRING_BOOT_IMAGE_NAME }}:${{ github.sha }}
 
-
-#    - name: Build and push container image to registry
-#      uses: docker/build-push-action@v2
-#      with:
-#        push: true
-#        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_3bf4955121cb447489702e6b376dbb95 }}/monzaj19/adoptitfrontend:${{ github.sha }}
-#        file: ./frontend/adoptit-front/Dockerfile
+    - name: Run docker compose
+      run: docker-compose up
 
   deploy:
     runs-on: ubuntu-latest

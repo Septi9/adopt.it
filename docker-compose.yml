@@ -1,0 +1,56 @@
+version: '3.7'
+
+services:
+
+  # App backend service
+  app-server:
+    image: monzaj19/adoptitbackend
+    restart: always
+    build: .
+#      dockerfile: ./backend/Back-end/Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+        - db
+    volumes:
+      - ./backend/Back-end/target/backend-1.0-SNAPSHOT.jar
+    environment:
+        SPRING_DATASOURCE_URL: jdbc:mysql://adoptit-server.mysql.database.azure.com:3306/adoptit
+        SPRING_DATASOURCE_USERNAME: monzaj19
+        SPRING_DATASOURCE_PASSWORD: Adoptit21
+    networks:
+      - backend
+      - frontend
+
+  # Frontend Service
+  app-client:
+    image: monzaj19/adoptitfrontend
+#    build:
+#      dockerfile: ./frontend/adoptit-front/Dockerfile
+    ports:
+      - "4200:4200"
+    restart: always
+    depends_on:
+      - app-server
+    networks:
+      - frontend
+
+  # Database Service (Mysql)
+  db:
+    image: mysql
+    volumes:
+      - /var/lib/mysql
+    ports:
+      - "3306:3306"
+    restart: always
+    environment:
+      MYSQL_DATABASE: adoptit
+      MYSQL_USER: monzaj19
+      MYSQL_PASSWORD: Adoptit21
+      MYSQL_ROOT_PASSWORD: my-secret-pw
+    networks:
+      - backend
+
+networks:
+  backend:
+  frontend:
