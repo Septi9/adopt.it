@@ -1,7 +1,7 @@
 FROM node:16-alpine as build
-WORKDIR /app
+# WORKDIR /app
 COPY ./package*.json ./
-# RUN npm install
+RUN npm install
 COPY . ./
 WORKDIR ./
 RUN npm run build
