@@ -2,7 +2,6 @@
 # Build stage
 #
 FROM maven:3.8.4-jdk-11 AS build
-COPY src ./backend/Back-end/src
 COPY ./backend/Back-end/src ./backend/Back-end/src
 COPY ./backend/Back-end/pom.xml ./backend/Back-end
 RUN mvn clean package -f ./backend/Back-end/pom.xml
