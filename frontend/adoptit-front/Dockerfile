@@ -1,6 +1,7 @@
-FROM node:14.17.6 as build
+FROM node:16-alpine as build
 WORKDIR ./
 COPY ./package*.json ./
+RUN npm cache clear --force
 RUN npm install
 COPY . ./
 WORKDIR ./
