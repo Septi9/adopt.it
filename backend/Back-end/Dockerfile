@@ -3,8 +3,8 @@
 #
 FROM maven:3.8.4-jdk-11 AS build
 COPY ./src ./src
-COPY ./pom.xml ./
-RUN mvn clean package -f ./pom.xml
+COPY ./backend/Back-end/pom.xml ./
+RUN mvn clean package -f ./backend/Back-end/pom.xml
 
 #
 # Package stage
