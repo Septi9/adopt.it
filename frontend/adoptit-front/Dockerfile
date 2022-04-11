@@ -1,11 +1,8 @@
-FROM node:16-alpine as build
+FROM node:14-alpine as build
 # WORKDIR /app
-# COPY ./package*.json ./
-# RUN npm install
-# COPY . ./
-WORKDIR /usr/app
-COPY ./ /usr/app
+COPY ./package*.json ./
 RUN npm install
+COPY . ./
 WORKDIR ./
 RUN npm run build
 COPY . ./
