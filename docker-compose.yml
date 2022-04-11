@@ -6,8 +6,6 @@ services:
   app-server:
     image: monzaj19/adoptitbackend
     restart: always
-    build: .
-#      dockerfile: ./backend/Back-end/Dockerfile
     ports:
       - "8080:8080"
     depends_on:
@@ -25,8 +23,6 @@ services:
   # Frontend Service
   app-client:
     image: monzaj19/adoptitfrontend
-#    build:
-#      dockerfile: ./frontend/adoptit-front/Dockerfile
     ports:
       - "4200:4200"
     restart: always
