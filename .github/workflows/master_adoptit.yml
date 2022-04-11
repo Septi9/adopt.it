@@ -15,15 +15,6 @@ env:
 jobs:
   build:
     runs-on: 'ubuntu-latest'
-    services:
-      app-service:
-        image: ${{ env.DOCKER_HUB_USERNAME }}/${{ env.SPRING_BOOT_IMAGE_NAME }}:${{ github.sha }}
-        ports: 
-          - 8080:8080
-      app-client:
-        image: ${{ env.DOCKER_HUB_USERNAME }}/${{ env.ANGULAR_IMAGE_NAME }}:${{ github.sha }}
-        ports: 
-          - 4200:4200
 
     steps:
     - name: Check out code
@@ -53,16 +44,10 @@ jobs:
       with:
         file: ./backend/Back-end/Dockerfile
         push: true
-        tags: index.docker.io/${{ env.DOCKER_HUB_USERNAME }}/${{ env.SPRING_BOOT_IMAGE_NAME }}:${{ github.sha }}
-        
-    - name: Get from app-service
-      run: http:localhost:8080/
-      
-    - name: Get from app-client
-      run: http:localhost:4200/
+        tags: index.docker.io/${{ env.DOCKER_HUB_USERNAME }}/${{ env.SPRING_BOOT_IMAGE_NAME }}:${{ github.sha }}      
 
-#     - name: Run docker compose
-#       run: docker-compose up -d
+    - name: Run docker compose
+      run: docker-compose up -d
 
   deploy:
     runs-on: ubuntu-latest
