@@ -30,9 +30,6 @@ jobs:
         username: ${{ secrets.DOCKER_LOGIN }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
-    - name: Install npm
-      run: npm install
-
     - name: Build and push Angular Image
       id: angular_docker_build
       uses: docker/build-push-action@v2
