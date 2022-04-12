@@ -11,6 +11,18 @@ import { LoginsuccessComponent } from './loginsuccess/loginsuccess.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
 import {RouterModule} from "@angular/router";
 import { RegistersuccessComponent } from './registersuccess/registersuccess.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSidenavModule} from '@angular/material/sidenav';
+
+
+const MATERIAL_MODULES = [
+  MatToolbarModule,
+  MatIconModule,
+  MatSidenavModule
+]
 
 @NgModule({
   declarations: [
@@ -19,17 +31,25 @@ import { RegistersuccessComponent } from './registersuccess/registersuccess.comp
     RegistrationComponent,
     LoginsuccessComponent,
     MainpageComponent,
-    RegistersuccessComponent
+    RegistersuccessComponent,
+    NavbarComponent,
   ],
   imports: [
+    MATERIAL_MODULES,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    MatToolbarModule,
     RouterModule.forRoot([
       { path: '', pathMatch: 'full', redirectTo: 'home' },
       { path: 'home', component: MainpageComponent },
-    ])
+    ]),
+    BrowserAnimationsModule
+
+  ],
+  exports: [
+    MATERIAL_MODULES
   ],
   providers: [],
   bootstrap: [AppComponent]
