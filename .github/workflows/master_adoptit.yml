@@ -64,4 +64,4 @@ jobs:
         app-name: 'adoptit'
         slot-name: 'production'
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_3bf4955121cb447489702e6b376dbb95 }}/adoptit:${{ github.sha }}'
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_3bf4955121cb447489702e6b376dbb95 }}/adoptitfrontend:${{ github.sha }}'
