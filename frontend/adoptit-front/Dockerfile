@@ -1,22 +1,23 @@
-# stage 1
-FROM node as node
+FROM node:16-alpine
 WORKDIR /app
 COPY . .
 WORKDIR ./frontend/adoptit-front/package*.json
 RUN npm install
 RUN npm run ng build
+COPY . ./
+CMD ["npm", "start"]
 
-# stage 2
-FROM nginx:alpine
-COPY ./frontend/adoptit-front/nginx.conf /etc/nginx/nginx.conf
-COPY --from=node ./frontend/adoptit-front/app/dist/* /usr/share/nginx/html
+# # stage 1
+# FROM node as node
+# WORKDIR /app
+# COPY . .
+# WORKDIR ./frontend/adoptit-front/package*.json
+# RUN npm install
+# RUN npm run ng build
 
-#FROM node:16-alpine as build
-#WORKDIR /app
-#COPY ./package*.json ./
-#RUN npm install
-#COPY . ./
-#WORKDIR ./
-#RUN npm run build
-#COPY . ./
-#CMD ["npm", "start"]
+# # stage 2
+# FROM nginx:alpine
+# COPY ./frontend/adoptit-front/nginx.conf /etc/nginx/nginx.conf
+# COPY --from=node ./frontend/adoptit-front/app/dist/* /usr/share/nginx/html
+
+
