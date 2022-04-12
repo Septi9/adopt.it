@@ -1,7 +1,7 @@
 FROM node:16-alpine
-# WORKDIR /app
-# COPY . .
-WORKDIR ./frontend/adoptit-front/package*.json
+WORKDIR /app
+COPY . .
+WORKDIR ./frontend/adoptit-front/app/package*.json
 RUN npm install
 RUN npm run ng build
 COPY . ./
