@@ -2,7 +2,8 @@
 FROM node as node
 WORKDIR /app
 COPY . .
-RUN #npm install
+WORKDIR ./frontend/adoptit-front/package*.json
+RUN npm install
 RUN npm run ng build
 
 # stage 2
