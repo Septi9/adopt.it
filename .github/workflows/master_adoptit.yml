@@ -25,13 +25,22 @@ jobs:
         registry: https://index.docker.io/v1/
         username: ${{ secrets.AzureAppService_ContainerUsername_91601c6343ad4e519d6fbe5078acd650 }}
         password: ${{ secrets.AzureAppService_ContainerPassword_144be9515465461ca6e13be88d7b3686 }}
-
-    - name: Build and push container image to registry
+        
+    - name: Build and push Angular Image
+      id: angular_docker_build
       uses: docker/build-push-action@v2
       with:
+        file: ./frontend/adoptit-front/Dockerfile
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_91601c6343ad4e519d6fbe5078acd650 }}/monzaj19/adoptitfrontend:${{ github.sha }}
-        file: ./Dockerfile
+        tags: index.docker.io/${{ env.DOCKER_HUB_USERNAME }}/${{ env.ANGULAR_IMAGE_NAME }}:${{ github.sha }}
+
+    - name: Build and push Spring Boot Image
+      id: spring-boot-docker_build
+      uses: docker/build-push-action@v2
+      with:
+        file: ./backend/Back-end/Dockerfile
+        push: true
+        tags: index.docker.io/${{ env.DOCKER_HUB_USERNAME }}/${{ env.SPRING_BOOT_IMAGE_NAME }}:${{ github.sha }}
 
   deploy:
     runs-on: ubuntu-latest
