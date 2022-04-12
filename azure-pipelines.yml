@@ -13,7 +13,7 @@ variables:
 
 stages:
 - stage: Build
-  displayName: Build image
+  displayName: Build  frontend image
   jobs:
   - job: Build
     displayName: Build
@@ -24,6 +24,6 @@ stages:
       displayName: Build an image
       inputs:
         command: build
-        dockerfile: '$(Build.SourcesDirectory)/backend/Back-end/Dockerfile'
+        dockerfile: '$(Build.SourcesDirectory)/frontend/adoptit-front/Dockerfile'
         tags: |
           $(tag)
