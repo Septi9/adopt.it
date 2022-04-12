@@ -47,7 +47,7 @@ jobs:
         tags: index.docker.io/${{ env.DOCKER_HUB_USERNAME }}/${{ env.SPRING_BOOT_IMAGE_NAME }}:${{ github.sha }}
 
     - name: Run docker compose
-      run: docker-compose up
+      run: docker-compose up -d
 
   deploy:
     runs-on: ubuntu-latest
@@ -64,4 +64,4 @@ jobs:
         app-name: 'adoptit'
         slot-name: 'production'
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_3bf4955121cb447489702e6b376dbb95 }}/monzaj19/adoptitfrontend:${{ github.sha }}'
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_3bf4955121cb447489702e6b376dbb95 }}/adoptitfrontend:${{ github.sha }}'
