@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/adopt.it.iml" filepath="$PROJECT_DIR$/.idea/adopt.it.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Projekt Adopt.it.iml" filepath="$PROJECT_DIR$/.idea/Projekt Adopt.it.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backend/Back-end/backend.iml" filepath="$PROJECT_DIR$/backend/Back-end/backend.iml" />
     </modules>
   </component>
 </project>
