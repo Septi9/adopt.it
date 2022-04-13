@@ -32,7 +32,7 @@ const MATERIAL_MODULES = [
     LoginsuccessComponent,
     MainpageComponent,
     RegistersuccessComponent,
-    NavbarComponent,
+    NavbarComponent
   ],
   imports: [
     MATERIAL_MODULES,
