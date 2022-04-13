@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 env:
   ANGULAR_IMAGE_NAME: adoptitfrontend
-  SPRING_BOOT_IMAGE_NAME: adoptit
+  SPRING_BOOT_IMAGE_NAME: adoptitbackend
   DOCKER_HUB_USERNAME: monzaj19
 jobs:
   build:
