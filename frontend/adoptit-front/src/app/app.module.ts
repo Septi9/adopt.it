@@ -16,12 +16,15 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatGridListModule} from '@angular/material/grid-list';
+
 
 
 const MATERIAL_MODULES = [
   MatToolbarModule,
   MatIconModule,
-  MatSidenavModule
+  MatSidenavModule,
+  MatGridListModule
 ]
 
 @NgModule({
@@ -33,6 +36,7 @@ const MATERIAL_MODULES = [
     MainpageComponent,
     RegistersuccessComponent,
     NavbarComponent
+
   ],
   imports: [
     MATERIAL_MODULES,
