@@ -22,7 +22,7 @@ services:
 
   # Frontend Service
   app-client:
-    image: monzaj19/adoptitfrontend
+    image: amonzaj19/adoptitfrontend
     ports:
       - "4200:4200"
     restart: always
