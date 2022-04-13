@@ -5,6 +5,7 @@ WORKDIR ./frontend/adoptit-front/package*.json
 RUN npm install
 RUN npm run ng build
 COPY . ./
+EXPOSE 4200
 CMD ["npm", "start"]
 
 # # stage 1
