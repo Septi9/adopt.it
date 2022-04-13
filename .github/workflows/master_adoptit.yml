@@ -57,16 +57,8 @@ jobs:
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
-    - name: Deploy to Azure Web App Backend
-#       id: deploy-to-webapp
-      uses: azure/webapps-deploy@v2
-      with:
-        app-name: 'adoptit'
-        slot-name: 'production'
-        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-        images: 'index.docker.io/${{ env.DOCKER_HUB_USERNAME }}/adoptitbackend:${{ github.sha }}'
-    - name: Deploy to Azure Web App Frontend
-#       id: deploy-to-webapp
+    - name: Deploy to Azure Web App
+      id: deploy-to-webapp
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'adoptit'
