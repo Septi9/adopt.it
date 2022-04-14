@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy container app to Azure Web App - adoptit
+name: Build and deploy container app to Azure Web App - adoptit-app
 
 on:
   push:
@@ -33,14 +33,6 @@ jobs:
           username: ${{ secrets.DOCKER_LOGIN }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Build and push Angular Image
-        id: angular_docker_build
-        uses: docker/build-push-action@v2
-        with:
-          file: ./frontend/adoptit-front/Dockerfile
-          push: true
-          tags: index.docker.io/${{ env.DOCKER_HUB_USERNAME }}/${{ env.ANGULAR_IMAGE_NAME }}:${{ github.sha }}
-
       - name: Build and push Spring Boot Image
         id: spring-boot-docker_build
         uses: docker/build-push-action@v2
@@ -64,7 +56,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'adoptit'
+          app-name: 'adoptit-app'
           slot-name: 'production'
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          images: 'index.docker.io/${{ env.DOCKER_HUB_USERNAME }}/adoptitfrontend:${{ github.sha }}'
+          images: 'index.docker.io/${{ env.DOCKER_HUB_USERNAME }}/adoptitbackend:${{ github.sha }}'
