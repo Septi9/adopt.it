@@ -20,6 +20,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
 
 
 
+
+
 const MATERIAL_MODULES = [
   MatToolbarModule,
   MatIconModule,
@@ -35,7 +37,8 @@ const MATERIAL_MODULES = [
     LoginsuccessComponent,
     MainpageComponent,
     RegistersuccessComponent,
-    NavbarComponent
+    NavbarComponent,
+
 
   ],
   imports: [

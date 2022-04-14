@@ -95,6 +95,27 @@
   :nth-child(odd)
     margin-right: 30px
 
+.curiosity-module
+  background-color: pink
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  justify-content: space-between
+  margin-top: 3vh
+
+  div
+    height: 30vh
+    max-width: 50%
+    flex: 30%
+    background-color: #00faac
+
+  :nth-child(1)
+    margin-right: 20px
+
+  :nth-child(3)
+    margin-left: 20px
+
+
 
 @keyframes banner
   0%
@@ -127,7 +148,17 @@
 @media (max-width: 1000px)
   .animals_wrapper_column
     flex: 100%
-    max-width: 100%
+
+
+  .curiosity-module
+    div
+      flex: 100%
+      margin: 0
+    :nth-child(1)
+      margin-right: 0px
+
+    :nth-child(3)
+      margin-left: 0px
 
 
 @media (max-width: 850px)
