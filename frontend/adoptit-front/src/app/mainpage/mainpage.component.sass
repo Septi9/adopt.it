@@ -1,120 +1,156 @@
-.banner_wrapper
+.wrapper
   background-color: #000
 
-  .banner
-    width: 100%
-    height: 100vh
-    margin: 0 auto
-    background-size: cover
-    background-repeat: no-repeat
-    background-position: center 5vh
-    animation: banner infinite 20s linear
+  .banner_wrapper
+    background-color: #000
 
-    .bgc1
-      position: absolute
-      top: 7.5vh
+    .banner
       width: 100%
-      height: calc(100vh - 7.5vh)
-      background-color: rgba(0, 0, 0, 0.6)
-      color: #fff
+      height: 100vh
+      margin: 0 auto
+      background-size: cover
+      background-repeat: no-repeat
+      background-position: center 5vh
+      animation: banner infinite 20s linear
 
-  .svg-wrap
-    width: 350px
-    height: 70px
-    margin: calc(50vh - 35px) auto 0
-    cursor: pointer
+      .bgc1
+        position: absolute
+        top: 7.5vh
+        width: 100%
+        height: calc(100vh - 7.5vh)
+        background-color: rgba(0, 0, 0, 0.6)
+        color: #fff
 
-  .box
-    stroke-dasharray: 45 800
-    stroke-dashoffset: -670
-    stroke: #fff
-    stroke-width: 10px
-    transition: all ease-in-out 1.5s
-
-  .svg-wrap:hover
-    .box
-      stroke-dashoffset: 0
-      stroke-dasharray: 1000
-      stroke-width: 7px
-      stroke: #00faac
-
-    .text-hover
-      margin-left: 15px
-
-.nav-bottom
-  height: 10vh
-  background-color: #000
-  color: #fff
-  margin: 100px 0 0
-
-  article
-    background: radial-gradient(hsl(100 100% 60%),hsl(200 100% 60%)) fixed
-    background: conic-gradient(hsl(100 100% 60%),hsl(200 100% 60%),hsl(100 100% 60%)) fixed
-    -webkit-background-clip: text
-    -webkit-text-fill-color: transparent
-    text-align: center
-
-    h1
-      font-size: 40px
-
-    p
-      font-size: 20px
-
-.content
-  width: 70%
-  margin: 0 auto
-  background-color: #000
-
-.animals_wrapper_row
-  display: flex
-  flex-wrap: wrap
-  padding: 0 4px
-
-.animals_wrapper_row
-  div
-    overflow: hidden
-
-.animals_wrapper_row
-  div
-    img
-      margin-top: 60px
-      vertical-align: middle
-      width: 100%
+    .svg-wrap
+      width: 350px
+      height: 70px
+      margin: calc(50vh - 35px) auto 0
       cursor: pointer
-      transition: .5s
-  div
-    img:hover
-      transform: scale(1.1)
 
-.animals_wrapper_column
-  flex: 50%
-  max-width: 50%
-  padding: 0 4px
+    .box
+      stroke-dasharray: 45 800
+      stroke-dashoffset: -670
+      stroke: #fff
+      stroke-width: 10px
+      transition: all ease-in-out 1.5s
+
+    .svg-wrap:hover
+      .box
+        stroke-dashoffset: 0
+        stroke-dasharray: 1000
+        stroke-width: 7px
+        stroke: #00faac
+
+  .nav-bottom
+    height: 10vh
+    background-color: #000
+    color: #fff
+    margin: 100px 0 0
+
+    article
+      background: radial-gradient(hsl(100 100% 60%),hsl(200 100% 60%)) fixed
+      background: conic-gradient(hsl(100 100% 60%),hsl(200 100% 60%),hsl(100 100% 60%)) fixed
+      -webkit-background-clip: text
+      -webkit-text-fill-color: transparent
+      text-align: center
+
+      h1
+        font-size: 40px
+
+      p
+        font-size: 20px
+
+  .content
+    width: 70%
+    margin: 0 auto
+    //background-color: #000
+
+    .animals_wrapper_row
+      display: -ms-flexbox
+      display: flex
+      -ms-flex-wrap: wrap
+      flex-wrap: wrap
+      padding: 0 4px
 
 
-  :nth-child(odd)
-    margin-right: 30px
+      .animals_wrapper_column
+        -ms-flex: 50%
+        flex: 50%
+        max-width: 50%
+        padding: 0 4px
 
-.curiosity-module
-  background-color: pink
-  display: flex
-  flex-direction: row
-  flex-wrap: wrap
-  justify-content: space-between
-  margin-top: 3vh
+        :nth-child(odd)
+          margin-right: 30px
 
-  div
-    height: 30vh
-    max-width: 50%
-    flex: 30%
-    background-color: #00faac
+        div
+          overflow: hidden
 
-  :nth-child(1)
-    margin-right: 20px
+          img
+            margin-top: 60px
+            vertical-align: middle
+            width: 100%
+            cursor: pointer
+            transition: .5s
 
-  :nth-child(3)
-    margin-left: 20px
+        img:hover
+          transform: scale(1.1)
 
+    .curiosity-module
+      margin-top: 5vh
+      display: flex
+      flex-wrap: wrap
+      align-items: flex-start
+      flex-direction: row
+      justify-content: center
+
+      .element
+        position: relative
+        background-color: #111
+        margin: 20px
+        width: 30%
+        max-width: 30%
+        flex-grow: 1
+        height: 600px
+        min-height: 300px
+        min-width: 300px
+        color: #fff
+        border-radius: 20px
+
+        h1
+          text-align: center
+          margin: 20px 0 0
+
+        .image
+          width: 80%
+          height: 50%
+          margin: 20px auto 0
+          overflow: hidden
+          background-image: url("../images/kot.jpg")
+          background-size: cover
+          background-repeat: no-repeat
+          background-position: center
+          border: 2px solid #000
+          border-radius: 20px
+          box-shadow: 3px 3px 8px 0 rgb(0,0,0)
+
+        p
+          margin: 30px 20px
+          text-align: center
+
+        .read
+          position: absolute
+          bottom: 20px
+          left: calc(50% - 65px)
+          padding: 5px 10px
+          border: 2px solid #00faac
+          width: 130px
+          text-align: center
+          cursor: pointer
+          transition: .3s
+
+        .read:hover
+          background-color: #00faac
+          color: #000
 
 
 @keyframes banner
@@ -146,48 +182,58 @@
     background-image: url("../images/1.jpg")
 
 @media (max-width: 1000px)
-  .animals_wrapper_column
-    flex: 100%
+  .wrapper
+    .content
+      .animals_wrapper_row
+        .animals_wrapper_column
+          -ms-flex: 100%
+          flex: 100%
+          max-width: 100%
 
+          div
+            width: 80%
+            margin: 0 auto
 
-  .curiosity-module
-    div
-      flex: 100%
-      margin: 0
-    :nth-child(1)
-      margin-right: 0px
-
-    :nth-child(3)
-      margin-left: 0px
+      .curiosity-module
+        div
+          flex: 100%
+          max-width: 100%
 
 
 @media (max-width: 850px)
-  .banner
-    height: 60vh
+  .wrapper
+    .banner_wrapper
+      .banner
+        height: 60vh
 
-    .bgc1
-      height: calc(60vh - 7.5vh)
+        .bgc1
+          height: calc(60vh - 7.5vh)
 
-  .svg-wrap
-    margin: calc(30vh - 35px) auto 0
+          .svg-wrap
+            margin: calc(30vh - 35px) auto 0
 
+  .wrapper
+    .nav-bottom
+      margin: 20px 0 0
+      padding: 15px 0
 
-  .nav-bottom
-    article
-      h1
-        font-size: 30px
+      article
+        h1
+          font-size: 30px
 
-  .nav-bottom
-    article
-      p
-        font-size: 15px
+  .wrapper
+    .nav-bottom
+      article
+        p
+          font-size: 15px
 
 
 @media (max-width: 800px)
-  .nav-bottom
-    article
-      h1
-        font-size: 20px
+  .wrapper
+    .nav-bottom
+      article
+        h1
+          font-size: 20px
 
 
 
