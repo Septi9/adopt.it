@@ -1,6 +1,6 @@
 <mat-toolbar>
-  <img src="/assets/images/logoadoptit.svg" alt="image" class="nav-logo">
+  <img [routerLink]="['/']" src="/assets/images/logoadoptit.svg" alt="image" class="nav-logo">
   <span class="example-spacer"></span>
-  <button [routerLink]="['/registration']" type="submit" class="nav-button register">Registration</button>
-  <button [routerLink]="['/login']" type="submit" class="nav-button login">Login</button>
+  <button [routerLink]="['/registration']" type="submit" class="nav-button register">Zarejestruj się</button>
+  <button [routerLink]="['/login']" type="submit" class="nav-button login">Zaloguj się</button>
 </mat-toolbar>
