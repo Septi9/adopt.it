@@ -1,47 +1,53 @@
 <app-navbar></app-navbar>
 <div class="container">
-  <h2>Registration</h2>
-  <form #registerform="ngForm" (ngSubmit)="registerUser()">
-    <small class="text-danger">{{msg}}</small>
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" class="form-control" placeholder="Enter email" name="email" [(ngModel)]="user.emailId" #email="ngModel" required pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
-             [class.is-invalid]="email.invalid && email.touched"
-      >
-      <div *ngIf="email.errors && (email.invalid && email.touched)">
-        <small class="text-danger" *ngIf="email.errors?.['required']">Email Id is required field</small>
-        <small class="text-danger" *ngIf="email.errors?.['pattern']">Enter the valid emailId</small>
+  <div class="form-wrap">
+    <h2>Rejestracja</h2>
+    <form #registerform="ngForm" (ngSubmit)="registerUser()">
+      <small class="text-danger">{{msg}}</small>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" placeholder="Podaj email" name="email" [(ngModel)]="user.emailId" #email="ngModel" required pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+               [class.is-invalid]="email.invalid && email.touched"
+        >
+        <div *ngIf="email.errors && (email.invalid && email.touched)">
+          <small class="text-danger" *ngIf="email.errors?.['required']">Email jest wymagany</small>
+          <small class="text-danger" *ngIf="email.errors?.['pattern']">Podaj prawidłowy Email</small>
+        </div>
       </div>
-    </div>
 
-    <div class="form-group">
-      <label for="username">User name:</label>
-      <input type="text" class="form-control" placeholder="Enter username" name="username" [(ngModel)]="user.userName" #userName="ngModel" required
-             [class.is-invalid]="userName.invalid && userName.touched"
-      >
-      <small class="text-danger" [class.d-none]="userName.valid || userName.untouched">User Name is required field</small>
-    </div>
+      <div class="form-group">
+        <label for="username">Nazwa użytkownika:</label>
+        <input type="text" class="form-control" placeholder="Podaj nazwę użytkownika" name="username" [(ngModel)]="user.userName" #userName="ngModel" required
+               [class.is-invalid]="userName.invalid && userName.touched"
+        >
+        <div>
+          <small class="text-danger" [class.d-none]="userName.valid || userName.untouched">Nazwa użytkownika jest wymagana</small>
+        </div>
+      </div>
 
-    <div class="form-group">
-      <label for="pwd">Password:</label>
-      <input type="password" class="form-control" placeholder="Enter password" name="accountPassword" [(ngModel)]="user.accountPassword" #accountPassword="ngModel" required
-             [class.is-invalid]="accountPassword.invalid && accountPassword.touched"
-      >
-      <small class="text-danger" [class.d-none]="accountPassword.valid || accountPassword.untouched">password is required field</small>
-    </div>
+      <div class="form-group">
+        <label for="pwd">Hasło:</label>
+        <input type="password" class="form-control" placeholder="Podaj hasło" name="accountPassword" [(ngModel)]="user.accountPassword" #accountPassword="ngModel" required
+               [class.is-invalid]="accountPassword.invalid && accountPassword.touched"
+        >
+        <div>
+          <small class="text-danger" [class.d-none]="accountPassword.valid || accountPassword.untouched">Hasło jest wymagane</small>
+        </div>
+      </div>
 
-    <div class="form-group">
-      <label for="pwd">ConfirmPassword:</label>
-      <input type="password" class="form-control" placeholder="Enter confirm password" name="caccountPassword" (ngModel)="user.accountPassword" #caccountPassword="ngModel" required
-             [class.is-invalid]="caccountPassword.invalid && caccountPassword.touched"
-      >
-      <small class="text-danger" [class.d-none]="(caccountPassword.value == accountPassword.value) || caccountPassword.untouched">password and confirm password must be the same</small>
-    </div>
+      <div class="form-group">
+        <label for="pwd">Potwierdź hasło:</label>
+        <input type="password" class="form-control" placeholder="Podaj hasło" name="caccountPassword" (ngModel)="user.accountPassword" #caccountPassword="ngModel" required
+               [class.is-invalid]="caccountPassword.invalid && caccountPassword.touched"
+        >
+        <div>
+          <small class="text-danger" [class.d-none]="(caccountPassword.value == accountPassword.value) || caccountPassword.untouched">Hasło musi być takie samo jak wyżej</small>
+        </div>
+      </div>
 
-    <button [disabled]="registerform.form.invalid" type="submit" class="btn btn-info">Register</button>
-  </form>
-  <small class="float-end btextual" [routerLink]="['/login']">Existing user? Login here</small>
-  <br>
-  <small class="float-end btextual" [routerLink]="['/']">Main page</small>
+      <button [disabled]="registerform.form.invalid" type="submit" class="confirm">Zarejestruj się</button>
+    </form>
+    <small class="float-end btextual" [routerLink]="['/login']">Jeśli masz już konto, zaloguj się tutaj</small>
+  </div>
 </div>
 <app-footer></app-footer>

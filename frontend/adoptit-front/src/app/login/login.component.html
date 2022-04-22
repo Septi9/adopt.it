@@ -1,34 +1,32 @@
 <app-navbar></app-navbar>
 <div class="container">
-  <h2>Login</h2>
-  <form #loginform="ngForm" (ngSubmit)="loginUser()">
-    {{loginform.form.valid}}
-    <small class="text-danger">{{msg}}</small>
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" class="form-control" placeholder="Enter email" name="email" [(ngModel)]="user.emailId" #email="ngModel" required pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
-      [class.is-invalid]="email.invalid && email.touched"
-      >
-<!--      <small class="text-danger" [class.d-none]="email.valid || email.untouched">Email Id is required field</small>-->
-      <div *ngIf="email.errors && (email.invalid && email.touched)">
-        <small class="text-danger" *ngIf="email.errors?.['required']">Email Id is required field</small>
-        <small class="text-danger" *ngIf="email.errors?.['pattern']">Enter the valid emailId</small>
+  <div class="form-wrap">
+    <h2>Logowanie</h2>
+    <form #loginform="ngForm" (ngSubmit)="loginUser()">
+      <small class="text-danger">{{msg}}</small>
+      <div class="form-group">
+        <input type="email" class="form-control" placeholder="Email" name="email" [(ngModel)]="user.emailId" #email="ngModel" required pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+               [class.is-invalid]="email.invalid && email.touched"
+        >
+        <label for="email">Email:</label>
+        <div *ngIf="email.errors && (email.invalid && email.touched)">
+          <small class="text-danger" *ngIf="email.errors?.['required']">Email jest wymagany</small>
+          <small class="text-danger" *ngIf="email.errors?.['pattern']">Podaj prawidłowy Email</small>
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <label for="pwd">Password:</label>
-      <input type="password" class="form-control" placeholder="Enter password" name="accountPassword" [(ngModel)]="user.accountPassword" #password="ngModel" required
-             [class.is-invalid]="password.invalid && password.touched"
-      >
-      <small class="text-danger" [class.d-none]="password.valid || password.untouched">password is required field</small>
-    </div>
-    <div class="checkbox">
-      <label><input type="checkbox" name="remember"> Remember me</label>
-    </div>
-    <button [disabled]="loginform.form.invalid" type="submit" class="btn btn-info">Login</button>
-  </form>
-  <small class="float-end" [routerLink]="['/registration']">New user? Register here</small>
-  <br>
-  <small class="float-end btextual" [routerLink]="['/']">Main page</small>
-</div>
+      <div class="form-group">
+        <input type="password" class="form-control" placeholder="Hasło" name="accountPassword" [(ngModel)]="user.accountPassword" #password="ngModel" required
+               [class.is-invalid]="password.invalid && password.touched"
+        >
+        <label for="pwd">Hasło:</label>
+        <div>
+          <small class="text-danger" [class.d-none]="password.valid || password.untouched">Hasło jest wymagane</small>
+        </div>
+      </div>
+      <button [disabled]="loginform.form.invalid" type="submit" class="confirm">Zaloguj się</button>
+    </form>
+    <small class="float-end" [routerLink]="['/registration']">Zarejestruj się tutaj</small>
+  </div>
+  </div>
+
 <app-footer></app-footer>
