@@ -49,8 +49,8 @@ jobs:
         push: true
         tags: index.docker.io/${{ env.DOCKER_HUB_USERNAME }}/${{ env.SPRING_BOOT_IMAGE_NAME }}:${{ github.sha }}
 
-     - name: Run docker compose
-       run: docker-compose up -d
+    - name: Run docker compose
+      run: docker-compose up -d
 
   deploy:
     runs-on: ubuntu-latest
