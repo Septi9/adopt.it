@@ -1,0 +1,325 @@
+.wrapper
+  background-color: #000
+
+  //------------------------------------------------
+
+  .banner_wrapper
+    background-color: #000
+
+    .banner
+      position: relative
+      width: 100%
+      height: 100vh
+      margin: 0 auto
+      background-image: url("../images/elephants.jpg")
+      //background-size: cover
+      //background-repeat: no-repeat
+      //background-position: center 5vh
+      //animation: banner infinite 20s linear
+
+      .bgc1
+        position: absolute
+        top: 7.5vh
+        width: 100%
+        height: calc(100vh - 7.5vh)
+        background-color: rgba(0, 0, 0, 0.7)
+        color: #fff
+
+        .hexagon
+          clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%)
+          padding: 5px
+          max-height: 250px
+          max-width: 250px
+          height: 100%
+          width: 100%
+          position: absolute
+          background-size: cover
+          background-repeat: no-repeat
+          background-position: center center
+
+
+          //.border
+          //  width: 100%
+          //  height: 100%
+          //  clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%)
+
+          //img
+          //  width: 100%
+          //  height: 100%
+          //  clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%)
+
+        .hexagon:nth-child(1)
+          top: 100px
+          left: 100px
+          background-image: url("../images/1.jpg")
+
+
+        .hexagon:nth-child(2)
+          top: 296px
+          left: 218px
+          background-image: url("../images/2.jpg")
+
+        .hexagon:nth-child(3)
+          top: 100px
+          left: 335px
+          background-image: url("../images/3.jpg")
+
+        .hexagon:nth-child(4)
+          top: 296px
+          left: 453px
+          background-image: url("../images/4.jpg")
+
+        .hexagon:nth-child(5)
+          top: 100px
+          left: 570px
+          background-image: url("../images/kot.jpg")
+
+        .svg-wrap
+          position: absolute
+          top: calc(50vh - 35px)
+          right: 20vw
+          width: 350px
+          height: 70px
+          //margin: calc(50vh - 35px) auto 0
+          cursor: pointer
+
+        .box
+          stroke-dasharray: 45 800
+          stroke-dashoffset: -670
+          stroke: #fff
+          stroke-width: 10px
+          transition: all ease-in-out 1.5s
+
+        .svg-wrap:hover
+          .box
+            stroke-dashoffset: 0
+            stroke-dasharray: 1000
+            stroke-width: 7px
+            stroke: #00faac
+
+  //-----------------------------------------------
+
+  .nav-bottom
+    height: 10vh
+    background-color: #000
+    color: #fff
+    margin: 100px 0 0
+
+    article
+      background: radial-gradient(hsl(100 100% 60%),hsl(200 100% 60%)) fixed
+      background: conic-gradient(hsl(100 100% 60%),hsl(200 100% 60%),hsl(100 100% 60%)) fixed
+      -webkit-background-clip: text
+      -webkit-text-fill-color: transparent
+      text-align: center
+
+      h1
+        font-size: 40px
+
+      p
+        font-size: 20px
+
+  .content
+    width: 70%
+    margin: 0 auto 10vh
+    //background-color: #000
+
+    .animals_wrapper_row
+      display: -ms-flexbox
+      display: flex
+      -ms-flex-wrap: wrap
+      flex-wrap: wrap
+      padding: 0 4px
+
+
+      .animals_wrapper_column
+        -ms-flex: 50%
+        flex: 50%
+        max-width: 50%
+        padding: 0 4px
+
+        :nth-child(odd)
+          margin-right: 30px
+
+        div
+          overflow: hidden
+
+          img
+            margin-top: 60px
+            vertical-align: middle
+            width: 100%
+            cursor: pointer
+            transition: .5s
+
+        img:hover
+          transform: scale(1.1)
+
+    .curiosity-module
+      margin-top: 5vh
+      display: flex
+      flex-wrap: wrap
+      align-items: flex-start
+      flex-direction: row
+      justify-content: center
+
+      .element
+        position: relative
+        background-color: #111
+        margin: 20px
+        width: 30%
+        max-width: 30%
+        flex-grow: 1
+        height: 600px
+        min-height: 300px
+        min-width: 300px
+        color: #fff
+        border-radius: 20px
+
+        h1
+          text-align: center
+          margin: 20px 0 0
+
+        .image
+          width: 80%
+          height: 50%
+          margin: 20px auto 0
+          overflow: hidden
+          background-image: url("../images/kot.jpg")
+          background-size: cover
+          background-repeat: no-repeat
+          background-position: center
+          border: 2px solid #000
+          border-radius: 20px
+          box-shadow: 3px 3px 8px 0 rgb(0,0,0)
+
+        p
+          margin: 30px 20px
+          text-align: center
+
+        .read
+          position: absolute
+          bottom: 20px
+          left: calc(50% - 65px)
+          padding: 5px 10px
+          border: 2px solid #00faac
+          width: 130px
+          text-align: center
+          cursor: pointer
+          transition: .3s
+
+        .read:hover
+          background-color: #00faac
+          color: #000
+
+
+@keyframes banner
+  0%
+    background-image: url("../images/1.jpg"), url("../images/2.jpg")
+
+  20%
+    background-image: url("../images/1.jpg")
+
+  25%
+    background-image: url("../images/2.jpg"), url("../images/3.jpg")
+
+  45%
+    background-image: url("../images/2.jpg")
+
+  50%
+    background-image: url("../images/3.jpg"), url("../images/4.jpg")
+
+  70%
+    background-image: url("../images/3.jpg")
+
+  75%
+    background-image: url("../images/4.jpg")
+
+  95%
+    background-image: url("../images/4.jpg")
+
+  100%
+    background-image: url("../images/1.jpg")
+
+@media (max-width: 1000px)
+  .wrapper
+    .content
+      .animals_wrapper_row
+        .animals_wrapper_column
+          -ms-flex: 100%
+          flex: 100%
+          max-width: 100%
+
+          div
+            width: 80%
+            margin: 0 auto
+
+      .curiosity-module
+        div
+          flex: 100%
+          max-width: 100%
+
+
+@media (max-width: 850px)
+  .wrapper
+    .banner_wrapper
+      .banner
+        height: 60vh
+
+        .bgc1
+          height: calc(60vh - 7.5vh)
+
+          .svg-wrap
+            top: calc(30vh - 35px)
+
+  .wrapper
+    .nav-bottom
+      margin: 20px 0 0
+      padding: 15px 0
+
+      article
+        h1
+          font-size: 30px
+
+  .wrapper
+    .nav-bottom
+      article
+        p
+          font-size: 15px
+
+
+@media (max-width: 800px)
+  .wrapper
+    .nav-bottom
+      article
+        h1
+          font-size: 20px
+
+
+
+@media screen and (max-width: 500px)
+  .wrapper
+    .banner_wrapper
+      .banner
+        .bgc1
+          .hexagon
+            width: 100px
+            height: 100px
+
+
+          .hexagon:nth-child(2)
+            top: 0
+            left: 100px
+
+
+          .hexagon:nth-child(3)
+            left: 200px
+
+
+          .hexagon:nth-child(4)
+            top: 82px
+            left: 50px
+
+
+          .hexagon:nth-child(5)
+            top: 82px
+            left: 150px
+

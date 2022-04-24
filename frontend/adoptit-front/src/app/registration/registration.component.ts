@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
-  styleUrls: ['./registration.component.css']
+  styleUrls: ['./registration.component.sass']
 })
 export class RegistrationComponent implements OnInit {
 
@@ -23,7 +23,7 @@ export class RegistrationComponent implements OnInit {
     this._service.registerUserFromRemote(this.user).subscribe(
       data => {
         console.log("response recieved");
-        this.msg = "Registration successful";
+        this._router.navigate(['/registersuccess'])
       },
       error => {
         console.log("exception occured");
