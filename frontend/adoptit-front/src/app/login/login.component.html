@@ -1,5 +1,6 @@
 <app-navbar></app-navbar>
 <div class="container">
+<<<<<<< HEAD
   <div class="form-wrap">
     <h2>Logowanie</h2>
     <form #loginform="ngForm" (ngSubmit)="loginUser()">
@@ -13,6 +14,22 @@
           <small class="text-danger" *ngIf="email.errors?.['required']">Email jest wymagany</small>
           <small class="text-danger" *ngIf="email.errors?.['pattern']">Podaj prawidłowy Email</small>
         </div>
+=======
+  <h2>Login</h2>
+  <h3>Teeest</h3>
+  <form #loginform="ngForm" (ngSubmit)="loginUser()">
+    {{loginform.form.valid}}
+    <small class="text-danger">{{msg}}</small>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" placeholder="Enter email" name="email" [(ngModel)]="user.emailId" #email="ngModel" required pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+      [class.is-invalid]="email.invalid && email.touched"
+      >
+<!--      <small class="text-danger" [class.d-none]="email.valid || email.untouched">Email Id is required field</small>-->
+      <div *ngIf="email.errors && (email.invalid && email.touched)">
+        <small class="text-danger" *ngIf="email.errors?.['required']">Email Id is required field</small>
+        <small class="text-danger" *ngIf="email.errors?.['pattern']">Enter the valid emailId</small>
+>>>>>>> 53e5d52ee3a8f2e199e8b09579a84f4237f46653
       </div>
       <div class="form-group">
         <input type="password" class="form-control" placeholder="Hasło" name="accountPassword" [(ngModel)]="user.accountPassword" #password="ngModel" required

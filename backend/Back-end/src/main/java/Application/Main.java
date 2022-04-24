@@ -21,7 +21,7 @@ public class Main implements CommandLineRunner {
 
     @GetMapping("/")
     public String getFirst() {
-        return "Witamy w ADOPT.IT!";
+        return "Witamy ponownie w ADOPT.IT!";
     }
 
 

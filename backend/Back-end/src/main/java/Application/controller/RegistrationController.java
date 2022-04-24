@@ -11,7 +11,8 @@ public class RegistrationController {
     private RegistrationService service;
 
     @PostMapping ("/registeruser")
-    @CrossOrigin(origins = "http://localhost:4200")
+//    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     public User registerUser(@RequestBody User user) throws Exception {
 
         String tempEmailId = user.getEmailId();
@@ -28,7 +29,8 @@ public class RegistrationController {
     }
 
     @PostMapping("/login")
-    @CrossOrigin(origins = "http://localhost:4200")
+//    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     public User loginUser (@RequestBody User user) throws Exception{
 
         String tempEmailId = user.getEmailId();
