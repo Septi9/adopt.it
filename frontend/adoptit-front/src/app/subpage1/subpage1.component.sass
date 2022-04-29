@@ -1,0 +1,90 @@
+.wrapper
+  background-color: #000
+  color: #fff
+
+  .container_page
+    position: relative
+    height: 300vh
+    background-color: #000
+
+    .banner
+      position: relative
+      width: 100%
+      height: 100vh
+      background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/tygrys_banner.jpg")
+      background-position: center
+      background-size: cover
+      background-repeat: no-repeat
+      background-attachment: fixed
+
+      .headers
+        position: relative
+        width: 50%
+        top: 40%
+        left: 15%
+
+        h1
+          font-size: 80px
+          font-weight: bold
+
+        p
+          font-size: 20px
+          margin-top: 60px
+          line-height: 30px
+
+        .button
+          display: inline-flex
+          margin-top: 50px
+          width: 180px
+          height: 55px
+          perspective: 1000px
+
+          a
+            font-size: 19px
+            letter-spacing: 1px
+            transform-style: preserve-3d
+            transform: translateZ(-25px)
+            transition: transform .25s
+
+          a:before, a:after
+            position: absolute
+            content: "Adoptuj tygrysa"
+            height: 55px
+            width: 180px
+            display: flex
+            align-items: center
+            justify-content: center
+            border: 5px solid #fff
+            box-sizing: border-box
+            border-radius: 5px
+
+          a:before
+            color: #000
+            background: #fff
+            transform: rotateY(0deg) translateZ(25px)
+
+          a:after
+            color: #fff
+            transform: rotateX(90deg) translateZ(25px)
+
+          a:hover
+            transform: translateZ(-25px) rotateX(-90deg)
+
+
+        //.button
+        //  width: 200px
+        //  height: 50px
+        //  margin-top: 50px
+        //  background-color: #fff
+        //  border-radius: 20px
+        //  color: #000
+        //  text-align: center
+        //  line-height: 50px
+        //  font-size: 20px
+        //  cursor: pointer
+
+
+
+
+
+

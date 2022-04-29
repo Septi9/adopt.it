@@ -18,6 +18,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { FooterComponent } from './footer/footer.component';
+import { Subpage1Component } from './subpage1/subpage1.component';
 
 
 const MATERIAL_MODULES = [
@@ -37,6 +38,7 @@ const MATERIAL_MODULES = [
     RegistersuccessComponent,
     NavbarComponent,
     FooterComponent,
+    Subpage1Component,
 
 
   ],
