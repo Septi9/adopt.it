@@ -6,6 +6,9 @@ import {RegistrationComponent} from "./registration/registration.component";
 import {MainpageComponent} from "./mainpage/mainpage.component";
 import {RegistersuccessComponent} from "./registersuccess/registersuccess.component";
 import {Subpage1Component} from "./subpage1/subpage1.component";
+import {Subpage2Component} from "./subpage2/subpage2.component";
+import {Subpage3Component} from "./subpage3/subpage3.component";
+import {Subpage4Component} from "./subpage4/subpage4.component";
 
 const routes: Routes = [
   {path:'', component:MainpageComponent},
@@ -13,7 +16,10 @@ const routes: Routes = [
   {path:'registersuccess',component:RegistersuccessComponent},
   {path:'registration',component:RegistrationComponent},
   {path:'login',component:LoginComponent},
-  {path:'tygrys', component:Subpage1Component}
+  {path:'tygrys', component:Subpage1Component},
+  {path:'pingwin', component:Subpage2Component},
+  {path:'goryl', component:Subpage3Component},
+  {path:'los', component:Subpage4Component}
 ];
 
 @NgModule({

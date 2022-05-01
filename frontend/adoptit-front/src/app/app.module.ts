@@ -19,6 +19,9 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { FooterComponent } from './footer/footer.component';
 import { Subpage1Component } from './subpage1/subpage1.component';
+import { Subpage2Component } from './subpage2/subpage2.component';
+import { Subpage3Component } from './subpage3/subpage3.component';
+import { Subpage4Component } from './subpage4/subpage4.component';
 
 
 const MATERIAL_MODULES = [
@@ -39,6 +42,9 @@ const MATERIAL_MODULES = [
     NavbarComponent,
     FooterComponent,
     Subpage1Component,
+    Subpage2Component,
+    Subpage3Component,
+    Subpage4Component,
 
 
   ],
