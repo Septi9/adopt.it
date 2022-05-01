@@ -9,11 +9,33 @@
         <span class="button"><a href="#"></a></span>
       </div>
     </div>
-    <div class="description">
-
+    <div class="elements">
+      <div class="photo_gallery"></div>
+      <div class="description">
+        <div class="context">
+          <dt>Populacja</dt>
+          <p>3890</p>
+          <dt>Występowanie</dt>
+          <p>Azja</p>
+          <dt>Zagrożenia</dt>
+          <p>Kłusownictwo, Mała liczebność populacji</p>
+        </div>
+      </div>
+      <div class="adopt">
+        <div class="data">
+          <dt>Adoptuj tygrysa</dt>
+          <p>Dzięki pomocy finansowej wspierających naszą fundację, jesteśmy w stanie wdrażać działania umożliwiające odbudowę populacji tygrysów na świecie!</p>
+        </div>
+        <div class="adopt_button" [routerLink]="['/login']">Adoptuj tygrysa</div>
+      </div>
+      <div class="back">
+        <div class="endpage">
+          <dt>Zobacz też innych naszych podopiecznych</dt>
+          <p>Nasza fundacja wspiera wiele różnych gatunków zwierząt. Sprawdź pozostałe!</p>
+        </div>
+        <div class="back_button" [routerLink]="['/']">Powrót do strony głównej</div>
+      </div>
     </div>
-    <div class="photo_gallery"></div>
-    <div class="adopt"></div>
   </div>
 
   <app-footer></app-footer>

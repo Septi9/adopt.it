@@ -71,17 +71,135 @@
             transform: translateZ(-25px) rotateX(-90deg)
 
 
-        //.button
-        //  width: 200px
-        //  height: 50px
-        //  margin-top: 50px
-        //  background-color: #fff
-        //  border-radius: 20px
-        //  color: #000
-        //  text-align: center
-        //  line-height: 50px
-        //  font-size: 20px
-        //  cursor: pointer
+    .elements
+      display: flex
+      flex-wrap: wrap
+      align-items: flex-start
+      flex-direction: row
+      height: 200vh
+      width: 70%
+      margin: 0 auto
+
+      .photo_gallery
+        width: 100%
+        height: 60vh
+        margin: 5vh 0 0
+        background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/elephants.jpg")
+        border-radius: 20px
+
+
+      .description
+        width: calc(50% - 10px)
+        height: 60vh
+        margin: 0 10px 0 0
+        background-color: #2b3ac7
+        color: #a6bbe3
+        border-radius: 20px
+
+        .context
+          display: grid
+          padding: 0 4vw
+          margin: 0 auto
+
+          dt
+            font-size: 40px
+            text-transform: uppercase
+            margin: 10% 0 4%
+
+          p
+            font-size: 30px
+            margin: 0 0 2vh 0
+            line-height: 45px
+            letter-spacing: 2px
+            font-weight: bold
+
+          dt:before
+            color: #a6bbe3
+            margin-left: -1vw
+            padding-right: 12px
+
+
+      .adopt
+        position: relative
+        width: calc(50% - 10px)
+        height: 60vh
+        margin: 0 0 0 10px
+        background-color: #1e2a21
+        color: #4cd265
+        font-weight: 700
+        border-radius: 20px
+
+        .data
+          margin: 50px 10px
+          text-align: center
+
+          dt
+            font-size: 40px
+            margin-bottom: 40px
+            text-transform: uppercase
+
+          p
+            font-size: 30px
+            margin: 0 100px
+            line-height: 45px
+            letter-spacing: 2px
+
+        .adopt_button
+          position: absolute
+          left: calc(50% - 100px)
+          bottom: 10%
+          width: 200px
+          height: 50px
+          color: #fff
+          border: 2px solid #fff
+          border-radius: 20px
+          line-height: 50px
+          text-align: center
+          text-transform: uppercase
+          letter-spacing: 1px
+          transition: .3s
+          cursor: pointer
+
+        .adopt_button:hover
+          background-color: #fff
+          color: #000
+
+      .back
+        position: relative
+        width: 100%
+        height: 60vh
+        margin: 0 auto
+        background-color: #5d4291
+        color: #c48cfc
+        border-radius: 20px
+
+        .endpage
+          margin: 50px 10px
+          text-align: center
+
+          dt
+            font-size: 40px
+            margin-bottom: 40px
+            text-transform: uppercase
+
+          p
+            font-size: 30px
+            margin: 70px 100px 0
+            line-height: 45px
+            letter-spacing: 2px
+            font-weight: 700
+
+        .back_button
+          position: absolute
+          width: 300px
+          border-bottom: 2px solid #fff
+          bottom: 50px
+          left: calc(50% - 150px)
+          text-align: center
+          padding: 20px
+          font-size: 20px
+          cursor: pointer
+
 
 
 
