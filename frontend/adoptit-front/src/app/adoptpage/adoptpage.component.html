@@ -1,5 +1,35 @@
 <div class="wrapper">
   <app-navbar></app-navbar>
-  <p>tu coś będzie</p>
+
+  <div class="container_page">
+    <div class="main">
+      <div class="adopt"></div>
+      <div class="account">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>Email</th>
+            <th>Nazwa użytkownika</th>
+            <th>Hasło</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          </tbody>
+        </table>
+        <form #changepasswordform="ngForm">
+          <label for="pwd">Chcesz zmienić hasło?</label>
+          <input type="password" name="accountPassword" placeholder="Podaj nowe hasło" (ngModel)="user.accountPassword" #caccountPassword="ngModel" required
+                 [class.is-invalid]="caccountPassword.invalid && caccountPassword.touched">
+          <button [disabled]="changepasswordform.form.invalid" type="submit" class="confirm">Zmień hasło</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <app-footer></app-footer>
 </div>

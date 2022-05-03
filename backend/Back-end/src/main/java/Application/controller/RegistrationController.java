@@ -50,6 +50,13 @@ public class RegistrationController {
         return userObj;
 
     }
+//
+//    @GetMapping("/adopt")
+//    @CrossOrigin(origins = "*", allowedHeaders = "*")
+//    public User getAll(@RequestBody User user) throws Exception {
+//        String tempEmailId = user.getEmailId();
+//        return service.fetchUserByEmailId(tempEmailId);
+//    }
 
 
 }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Observable} from "rxjs";
+import {User} from "../user";
+import {RegistrationService} from "../registration.service";
 
 @Component({
   selector: 'app-adoptpage',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdoptpageComponent implements OnInit {
 
-  constructor() { }
+  user = new User();
+
+  constructor(private registrationService: RegistrationService) { }
 
   ngOnInit(): void {
+    // this.reloadData();
   }
+
+  // reloadData() {
+  //   this.users = this.registrationService.getUsersList();
+  // }
+
+
 
 }
