@@ -14,10 +14,10 @@
           </tr>
           </thead>
           <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
+          <tr *ngFor = "let user of users">
+            <td>{{user.emailId}}</td>
+            <td>{{user.userName}}</td>
+            <td>{{user.accountPassword}}</td>
           </tr>
           </tbody>
         </table>

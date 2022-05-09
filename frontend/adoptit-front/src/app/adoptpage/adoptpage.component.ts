@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Observable} from "rxjs";
 import {User} from "../user";
 import {RegistrationService} from "../registration.service";
+import {UserService} from "../userService/user.service";
 
 @Component({
   selector: 'app-adoptpage',
@@ -10,17 +10,21 @@ import {RegistrationService} from "../registration.service";
 })
 export class AdoptpageComponent implements OnInit {
 
+  users: User[];
+
   user = new User();
 
-  constructor(private registrationService: RegistrationService) { }
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-    // this.reloadData();
+      this.getUsers();
   }
 
-  // reloadData() {
-  //   this.users = this.registrationService.getUsersList();
-  // }
+  private getUsers(){
+    this.userService.getUsersList().subscribe(data => {
+      this.users = data;
+    });
+  }
 
 
 
