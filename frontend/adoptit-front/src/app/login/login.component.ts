@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import {Component, OnInit, Output, EventEmitter} from '@angular/core';
+import {FormBuilder, FormGroup, NgForm} from '@angular/forms';
 import {RegistrationService} from "../registration.service";
 import {User} from "../user";
 import {Router} from "@angular/router";
 import {AuthenticationService} from "../authentication/authentication.service";
 import {NavbarComponent} from "../navbar/navbar.component";
+import {AdoptpageComponent} from "../adoptpage/adoptpage.component";
+import {SharedService} from "../shared/shared.service";
 
 @Component({
   selector: 'app-login',
@@ -16,14 +18,18 @@ export class LoginComponent implements OnInit {
   user = new User();
   msg = '';
 
-  constructor(private _service : RegistrationService, private _router : Router, private loginservice: AuthenticationService) { }
+  constructor(private _service: RegistrationService, private _router: Router, private loginservice: AuthenticationService, private shared: SharedService) {
+  }
+
+
 
   ngOnInit(): void {
+
   }
 
   loginUser() {
     this._service.loginUserFromRemote(this.user).subscribe(
-      data =>{
+      data => {
         this.loginservice.authenticate(this.user.emailId);
         console.log("response recieved");
         this._router.navigate(['/adopt'])
@@ -38,5 +44,6 @@ export class LoginComponent implements OnInit {
   gotoregistration() {
     this._router.navigate(['/registration']);
   }
+
 
 }

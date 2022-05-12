@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from "@angular/common/http";
 import { LoginsuccessComponent } from './loginsuccess/loginsuccess.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
@@ -63,7 +63,8 @@ const MATERIAL_MODULES = [
       { path: '', pathMatch: 'full', redirectTo: 'home' },
       { path: 'home', component: MainpageComponent },
     ]),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
 
   ],
   exports: [
