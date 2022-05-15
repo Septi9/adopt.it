@@ -13,6 +13,7 @@ export class RegistrationComponent implements OnInit {
 
   user = new User();
   msg='';
+  isVerified = false;
 
   constructor(private _service : RegistrationService, private _router : Router) { }
 

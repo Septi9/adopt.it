@@ -13,18 +13,25 @@ export class AdoptpageComponent implements OnInit {
   users: User[];
 
   user = new User();
+  sessionValue
+  animal
 
   constructor(private userService: UserService, private shared: SharedService) {
   }
 
   ngOnInit(): void {
     this.getUsers();
+    this.sessionValue = sessionStorage.getItem('email');
   }
 
   private getUsers() {
     this.userService.getUsersList().subscribe(data => {
       this.users = data;
     });
+  }
+
+  getAnimal(arg) {
+    this.animal = arg;
   }
 
 

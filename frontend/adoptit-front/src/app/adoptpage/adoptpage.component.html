@@ -3,7 +3,24 @@
 
   <div class="container_page">
     <div class="main">
-      <div class="adopt"></div>
+      <div class="adopt">
+        <div class="animals">
+          <div (click)="getAnimal('Tygrys')" class="gallery tiger"></div>
+          <div (click)="getAnimal('Goryl')" class="gallery gorilla"></div>
+          <div (click)="getAnimal('Pingwin')" class="gallery penguin"></div>
+          <div (click)="getAnimal('Łoś')"class="gallery moose"></div>
+        </div>
+        <div class="adoptAnimal">
+          <p class="txt">Wybierz zwierzę, które chcesz adoptować i podaj swój email, a my wyślemy ci potwierdzenie adopcji.</p>
+          <form #adopt="ngForm">
+            <label>Email:</label>
+            <input type="email" name="email" value="{{sessionValue}}">
+            <button type="submit">Adoptuj</button>
+            <button (click)="getAnimal('')" class="disable">Odznacz swój wybór</button>
+          </form>
+          <p class="txt">Twój wybór to: {{animal}}</p>
+        </div>
+      </div>
       <div class="account">
         <table class="table table-striped">
           <thead>
@@ -14,11 +31,13 @@
           </tr>
           </thead>
           <tbody>
-          <tr *ngFor = "let user of users">
-            <td>{{user.emailId}}</td>
-            <td>{{user.userName}}</td>
-            <td>{{user.accountPassword}}</td>
-          </tr>
+          <ng-container *ngFor = "let user of users">
+            <tr *ngIf="user.emailId == sessionValue">
+              <td>{{user.emailId}}</td>
+              <td>{{user.userName}}</td>
+              <td>{{user.accountPassword}}</td>
+            </tr>
+          </ng-container>
           </tbody>
         </table>
         <form #changepasswordform="ngForm">
