@@ -1,5 +1,5 @@
 <mat-toolbar>
-  <img [routerLink]="['/']" src="/assets/images/logoadoptit.svg" alt="image" class="nav-logo">
+  <img [routerLink]="['/']" (click)="scrollToUpFunction()" src="/assets/images/logoadoptit.svg" alt="image" class="nav-logo">
   <span class="example-spacer"></span>
   <div *ngIf="loginService.isUserLoggedIn()" style="margin-right: 200px"></div>
   <button *ngIf="loginService.isUserLoggedIn()" [routerLink]="['/adopt']" type="submit" class="nav-button register">Moje konto</button>

@@ -1,5 +1,5 @@
 <div class="wrapper">
-  <app-navbar></app-navbar>
+  <app-navbar id="section1"></app-navbar>
 
   <div class="banner_wrapper">
     <div class="banner">
@@ -9,7 +9,7 @@
         <div class="hexagon"></div>
         <div class="hexagon"></div>
         <div class="hexagon"></div>
-        <div class="svg-wrap">
+        <div class="svg-wrap" (click)="scrollFunction()">
           <svg width="350" height="70">
             <g>
               <rect class="box" width="350" height="70" style="fill:rgba(0,0,0,0)"/>
@@ -22,7 +22,7 @@
     </div>
   </div>
 
-  <div class="nav-bottom">
+  <div class="nav-bottom" id="section">
     <article>
       <h1>Pomóż zagrożonym gatunkom przetrwać</h1>
       <p>adoptuj i zapisz się w szczytnym celu</p>
@@ -44,28 +44,28 @@
     <div class="nav-bottom">
       <article>
         <h1>Dowiedz się więcej na temat wsparcia</h1>
-        <p>zobacz nasze najciekawsze artykuły</p>
+        <p>zobacz artykuły najważniejszych organizacji</p>
       </article>
     </div>
 
     <div class="curiosity-module">
       <div class="element">
-        <h1>Artykuł 1</h1>
-        <div class="image"></div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ipsa laborum magni nostrum praesentium quis quo voluptate. Assumenda corporis, delectus dicta doloribus ea officiis quasi rem rerum, sit tenetur voluptate.</p>
-        <div class="read">Czytaj więcej</div>
+        <h1>WWF</h1>
+        <div class="image first"></div>
+        <p>Międzynarodowa organizacja pozarządowa, podejmująca działania na rzecz ochrony zwierząt i roślin. Przeciwdziała niekorzystnym wpływom człowieka na faunę i florę oraz funkcjonuje w zakresie ochrony zagrożonych gatunków.</p>
+        <div class="read"><a href="https://www.wwf.pl/" target="_blank">Czytaj więcej</a></div>
       </div>
       <div class="element">
-        <h1>Artykuł 2</h1>
-        <div class="image"></div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ipsa laborum magni nostrum praesentium quis quo voluptate. Assumenda corporis, delectus dicta doloribus ea officiis quasi rem rerum, sit tenetur voluptate.</p>
-        <div class="read">Czytaj więcej</div>
+        <h1>National Geographic</h1>
+        <div class="image second"></div>
+        <p>Czasopismo przyrodniczo-naukowe. W swoich publikacjach zamieszcza istotne i zweryfikowane informacje w wielu dziedzinach, również na temat zwierząt. Uświadamiają ludzi o problemach zagrożonych gatunków zwierząt.</p>
+        <div class="read"><a href="https://www.national-geographic.pl/" target="_blank">Czytaj więcej</a></div>
       </div>
       <div class="element">
-        <h1>Artykuł 3</h1>
-        <div class="image"></div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ipsa laborum magni nostrum praesentium quis quo voluptate. Assumenda corporis, delectus dicta doloribus ea officiis quasi rem rerum, sit tenetur voluptate.</p>
-        <div class="read">Czytaj więcej</div>
+        <h1>IUCN</h1>
+        <div class="image third"></div>
+        <p>Międzynarodowa Unia Ochrony Przyrody to organizacja, która zajmuje się ochroną przyrody i problemami środowiska naturalnego. Regularnie publikuje tzw. Czerwoną Księgę, która zawiera listę gatunków  roślin i zwierząt zagrożonych wyginięciem. </p>
+        <div class="read"><a href="https://www.iucn.org/" target="_blank">Czytaj więcej</a></div>
       </div>
     </div>
 

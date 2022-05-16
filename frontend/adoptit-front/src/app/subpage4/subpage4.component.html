@@ -6,10 +6,10 @@
       <div class="headers">
         <h1>Łoś</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lobortis pretium odio. Curabitur dapibus mauris at ligula molestie, sodales aliquam eros egestas. Nunc at lacinia neque.</p>
-        <span class="button"><a href="#"></a></span>
+        <span class="button"><a (click)="scrollFunction()"></a></span>
       </div>
     </div>
-    <div class="elements">
+    <div class="elements" id="section">
       <div class="photo_gallery"></div>
       <div class="description">
         <div class="context">
@@ -32,6 +32,11 @@
         <div class="endpage">
           <dt>Zobacz też innych naszych podopiecznych</dt>
           <p>Nasza fundacja wspiera wiele różnych gatunków zwierząt. Sprawdź pozostałe!</p>
+        </div>
+        <div class="gallery">
+          <div class="p1" [routerLink]="['/goryl']"></div>
+          <div class="p2" [routerLink]="['/pingwin']"></div>
+          <div class="p3" [routerLink]="['/tygrys']"></div>
         </div>
         <div class="back_button" [routerLink]="['/']">Powrót do strony głównej</div>
       </div>

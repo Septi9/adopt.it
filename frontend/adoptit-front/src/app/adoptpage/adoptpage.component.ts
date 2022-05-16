@@ -15,6 +15,7 @@ export class AdoptpageComponent implements OnInit {
   user = new User();
   sessionValue
   animal
+  value
 
   constructor(private userService: UserService, private shared: SharedService) {
   }
@@ -32,6 +33,15 @@ export class AdoptpageComponent implements OnInit {
 
   getAnimal(arg) {
     this.animal = arg;
+  }
+
+  showPassword() {
+    this.value = document.getElementById("passwordInput");
+    if (this.value.type === "password") {
+      this.value.type = "text";
+    } else {
+      this.value.type = "password";
+    }
   }
 
 

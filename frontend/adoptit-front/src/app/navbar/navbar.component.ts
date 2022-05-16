@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {AuthenticationService} from "../authentication/authentication.service";
+import {ViewportScroller} from "@angular/common";
 
 @Component({
   selector: 'app-navbar',
@@ -8,9 +9,19 @@ import {AuthenticationService} from "../authentication/authentication.service";
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(public loginService:AuthenticationService) { }
+  private pageYoffset: number;
+
+  @HostListener('window:scroll', ['$event']) onScroll(event){
+    this.pageYoffset = window.pageYOffset;
+  }
+
+  constructor(public loginService:AuthenticationService, private scroll: ViewportScroller) { }
 
   ngOnInit(): void {
+  }
+
+  scrollToUpFunction() {
+    this.scroll.scrollToPosition([0,0]);
   }
 
 }

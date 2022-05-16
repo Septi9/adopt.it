@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
+import {ViewportScroller} from "@angular/common";
 
 @Component({
   selector: 'app-subpage3',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Subpage3Component implements OnInit {
 
-  constructor() { }
+  private pageYoffset: number;
+
+  @HostListener('window:scroll', ['$event']) onScroll(event){
+    this.pageYoffset = window.pageYOffset;
+  }
+
+  constructor(private scroll: ViewportScroller) { }
 
   ngOnInit(): void {
+  }
+
+  scrollFunction() {
+    this.scroll.scrollToAnchor("section");
   }
 
 }

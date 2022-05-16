@@ -2,8 +2,9 @@
   .container_page
     height: 100vh
     width: 100%
-    background-color: #000
+    background: linear-gradient(#141e30, #243b55)
     position: relative
+    scroll-behavior: smooth
 
     .main
       position: relative
@@ -19,7 +20,7 @@
         min-width: 400px
         margin: 10vh auto
         border-radius: 20px
-        background-color: #00faac
+        background-color: #10141c
         overflow: hidden
 
         .animals
@@ -34,6 +35,11 @@
             background-repeat: no-repeat
             background-size: cover
             cursor: pointer
+            transition: 0.3s
+
+          .gallery:hover
+            background-color: #000
+            opacity: .5
 
           .tiger
             background-image: url("../images/tygrys_banner.jpg")
@@ -47,6 +53,58 @@
           .moose
             background-image: url("../images/los.jpg")
 
+        .adoptAnimal
+          position: relative
+          width: 100%
+          padding: 10px 0
+
+          .txt
+            width: 100%
+            padding: 5px 0
+            margin: 10px 0
+            color: #fff
+            text-align: center
+            font-size: 20px
+            line-height: 20px
+
+            .choice
+              font-weight: normal
+              color: #00faac
+
+          .txt2
+            width: 100%
+            margin: 20px 0
+            color: #fff
+            text-align: center
+            font-size: 16px
+            line-height: 16px
+
+          form
+            width: 100%
+            text-align: center
+
+            label
+              color: #ffffff
+              font-size: 20px
+              margin: 0 20px
+
+            input
+              padding: 5px 10px
+              border: 2px solid #000
+              margin: 0 20px 0 0
+
+            button
+              background-color: transparent
+              padding: 5px 10px
+              margin: 0 10px
+              color: #fff
+              border: 2px solid #00faac
+              transition: 0.3s
+
+            button:hover
+              background-color: #00faac
+              color: #000
+
 
       .account
         width: 40%
@@ -54,9 +112,29 @@
         min-width: 400px
         margin: 10vh auto
         border-radius: 20px
-        background-color: #00faac
+        background-color: #10141c
+        color: #fff
 
+        table
+          color: #fff
 
+          tr
+            height: 50px
+            line-height: 50px
+            margin: 0
+            padding: 0
+            text-align: center
+
+            .pass
+              width: 100px
+              background-color: #10141c
+              border: none
+              color: #fff
+
+            .check
+              margin: 0 10px
+              width: 20px
+              height: 20px
 
 
 @media (max-width: 816px)
