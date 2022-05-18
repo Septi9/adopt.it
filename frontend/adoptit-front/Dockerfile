@@ -8,7 +8,7 @@
 #EXPOSE 4200
 #CMD ["npm", "start"]
 
-FROM node:16-alpine
+FROM node:16
 RUN mkdir -p ./frontend/adoptit-front/app
 WORKDIR ./frontend/adoptit-front/app
 COPY ./frontend/adoptit-front/package*.json ./
