@@ -1,0 +1,16 @@
+services:
+  - docker
+
+before_install:
+  - docker build -t monzaj19/adoptitbackend .
+  - docker build -t monzaj19/adoptitfrontend .
+
+script:
+  - docker run monzaj19/adoptitbackend
+  - docker run monzaj19/adoptitfrontend
+
+after_success:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+
+  - docker push monzaj19/adoptitbackend
+  - docker push monzaj19/adoptitfrontend
