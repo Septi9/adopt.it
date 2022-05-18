@@ -11,10 +11,10 @@
 FROM node:16.13-alpine
 RUN mkdir -p ./frontend/adoptit-front/app
 WORKDIR ./frontend/adoptit-front/app
-COPY ./frontend/adoptit-front/package*.json ./
+COPY . .
+WORKDIR ./frontend/adoptit-front/package*.json ./
 RUN npm install
 COPY . .
-WORKDIR ./frontend/adoptit-front/package*.json
 RUN npm run ng build
 CMD [ "npm", "start" ]
 
