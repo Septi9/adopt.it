@@ -1,19 +1,19 @@
+language: java
+
 sudo: required
 
 services:
   - docker
 
-#before_install:
-
+before_install:
+  - docker build -f ./backend/Back-end/Dockerfile -t monzaj19/adoptitbackend .
+  - docker build -f ./frontend/adoptit-front/Dockerfile -t monzaj19/adoptitfrontend .
 
 #script:
 #  - docker run monzaj19/adoptitbackend
 #  - docker run monzaj19/adoptitfrontend
 
 after_success:
-  - docker build -f ./backend/Back-end/Dockerfile -t monzaj19/adoptitbackend .
-  - docker build -f ./frontend/adoptit-front/Dockerfile -t monzaj19/adoptitfrontend .
-
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
   - docker push monzaj19/adoptitbackend
