@@ -14,12 +14,8 @@ WORKDIR ./frontend/adoptit-front/app
 COPY ./frontend/adoptit-front/package*.json ./
 RUN npm install
 COPY . .
+WORKDIR ./frontend/adoptit-front/package*.json
 RUN npm run build
-EXPOSE $PORT
-ENV NUXT_HOST=0.0.0.0
-ENV NUXT_PORT=$PORT
-ENV PROXY_API=$PROXY_API
-ENV PROXY_LOGIN=$PROXY_LOGIN
 CMD [ "npm", "start" ]
 
 
