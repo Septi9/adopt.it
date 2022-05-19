@@ -1,6 +1,11 @@
 <mat-toolbar>
   <footer>
-    <div class="social"><a href="#"></a><a href="#"></a><a href="#"></a><a href="#"></a></div>
+    <div class="social">
+      <div onclick="window.open('https://www.facebook.com/','mywindow');" class="icon fb"></div>
+      <div onclick="window.open('https://www.instagram.com/','mywindow');" class="icon ig"></div>
+      <div onclick="window.open('https://www.twitter.com/','mywindow');" class="icon tw"></div>
+      <div onclick="window.open('https://www.youtube.com/','mywindow');" class="icon yt"></div>
+    </div>
     <ul class="list">
       <li class="list-inline-item"><a [routerLink]="['/']">Strona Główna</a></li>
       <li class="list-inline-item"><a [routerLink]="['/tygrys']">Tygrysy</a></li>
