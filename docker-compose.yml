@@ -10,8 +10,8 @@ services:
       - "8080:8080"
     depends_on:
       - db
-    volumes:
-      - ./backend/Back-end/target/backend-1.0-SNAPSHOT.jar
+#    volumes:
+#      - ./backend/Back-end/target/backend-1.0-SNAPSHOT.jar
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://adoptit-server.mysql.database.azure.com:3306/adoptit
       SPRING_DATASOURCE_USERNAME: monzaj19
@@ -46,6 +46,17 @@ services:
       MYSQL_ROOT_PASSWORD: my-secret-pw
     networks:
       - backend
+
+#  reverseproxy:
+#    image: monzaj19/nginx
+#    depends_on:
+#      - app-client
+#      - app-server
+#    ports:
+#      - "80:80"
+#    volumes:
+#      - /var/run/docker.sock:/tmp/docker.sock
+
 
 networks:
   backend:
