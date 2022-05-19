@@ -7,7 +7,7 @@
       "hostname": "api",
       "essential": true,
       "links": ["mysql"],
-      "memory": 500,
+      "memory": 1500,
       "portMappings": [
         {
           "hostPort": 8080,
@@ -21,7 +21,7 @@
       "hostname": "client",
       "essential": true,
       "links": ["server"],
-      "memory": 500,
+      "memory": 1500,
       "portMappings": [
         {
           "hostPort": 4200,
@@ -51,7 +51,7 @@
       "name": "mysql",
       "image": "mysql",
       "hostname": "mysql",
-      "memory": 500,
+      "memory": 1500,
       "essential": true,
       "portMappings": [
         {
