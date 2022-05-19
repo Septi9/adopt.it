@@ -1,0 +1,60 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "name": "client",
+      "image": "monzaj19/adoptitfrontend",
+      "hostname": "client",
+      "essential": false,
+      "memory": 500
+    },
+    {
+      "name": "server",
+      "image": "monzaj19/adoptitbackend",
+      "hostname": "api",
+      "essential": false,
+      "links": ["mysql"],
+      "memory": 500
+    },
+    {
+      "environment": [
+        {
+          "name": "MYSQL_DATABASE",
+          "value": "adoptit"
+        },
+        {
+          "name": "MYSQL_USER",
+          "value": "monzaj19"
+        },
+        {
+          "name": "MYSQL_PASSWORD",
+          "value": "Adoptit21"
+        },
+        {
+          "name": "MYSQL_ROOT_PASSWORD",
+          "value": "my-secret-pw"
+        }
+      ],
+      "name": "mysql",
+      "image": "mysql",
+      "hostname": "mysql",
+      "memory": 500,
+      "essential": true
+    },
+    {
+      "name": "nginx",
+      "image": "monzaj19/nginx",
+      "hostname": "nginx",
+      "essential": true,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 8100
+        }
+      ],
+      "links": ["client", "server"],
+      "memory": 500
+    }
+  ]
+}
+
