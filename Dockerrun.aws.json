@@ -2,19 +2,32 @@
   "AWSEBDockerrunVersion": 2,
   "containerDefinitions": [
     {
-      "name": "client",
-      "image": "monzaj19/adoptitfrontend",
-      "hostname": "client",
-      "essential": false,
-      "memory": 500
-    },
-    {
       "name": "server",
       "image": "monzaj19/adoptitbackend",
       "hostname": "api",
-      "essential": false,
+      "essential": true,
       "links": ["mysql"],
-      "memory": 500
+      "memory": 500,
+      "portMappings": [
+        {
+          "hostPort": 8080,
+          "containerPort": 8080
+        }
+      ]
+    },
+    {
+      "name": "client",
+      "image": "monzaj19/adoptitfrontend",
+      "hostname": "client",
+      "essential": true,
+      "links": "server",
+      "memory": 500,
+      "portMappings": [
+        {
+          "hostPort": 4200,
+          "containerPort": 4200
+        }
+      ]
     },
     {
       "environment": [
@@ -39,21 +52,13 @@
       "image": "mysql",
       "hostname": "mysql",
       "memory": 500,
-      "essential": true
-    },
-    {
-      "name": "nginx",
-      "image": "monzaj19/nginx",
-      "hostname": "nginx",
       "essential": true,
       "portMappings": [
         {
-          "hostPort": 80,
-          "containerPort": 8100
+          "hostPort": 3306,
+          "containerPort": 3306
         }
-      ],
-      "links": ["client", "server"],
-      "memory": 500
+      ]
     }
   ]
 }
