@@ -5,7 +5,7 @@
       "name": "server",
       "image": "monzaj19/adoptitbackend",
       "hostname": "api",
-      "essential": true,
+      "essential": false,
       "links": ["mysql"],
       "memory": 1500,
       "portMappings": [
@@ -19,7 +19,7 @@
       "name": "client",
       "image": "monzaj19/adoptitfrontend",
       "hostname": "client",
-      "essential": true,
+      "essential": false,
       "links": ["server"],
       "memory": 1500,
       "portMappings": [
