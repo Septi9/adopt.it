@@ -20,7 +20,7 @@
       "image": "monzaj19/adoptitfrontend",
       "hostname": "client",
       "essential": true,
-      "links": "server",
+      "links": ["server"],
       "memory": 500,
       "portMappings": [
         {
