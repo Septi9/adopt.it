@@ -38,7 +38,7 @@ jobs:
         with:
           file: ./frontend/adoptit-front/Dockerfile
           push: true
-          tags: index.docker.io/${{ env.DOCKER_HUB_USERNAME }}/${{ env.ANGULAR_IMAGE_NAME }}:latest
+          tags: index.docker.io/${{ env.DOCKER_HUB_USERNAME }}/${{ env.ANGULAR_IMAGE_NAME }}:${{ github.sha }}
 
   deploy:
     runs-on: ubuntu-latest
@@ -55,5 +55,5 @@ jobs:
         app-name: 'adopt'
         slot-name: 'production'
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-        images: 'index.docker.io/${{ env.DOCKER_HUB_USERNAME }}/${{ env.ANGULAR_IMAGE_NAME }}:latest
+        images: 'index.docker.io/${{ env.DOCKER_HUB_USERNAME }}/${{ env.ANGULAR_IMAGE_NAME }}:${{ github.sha }}'
 
