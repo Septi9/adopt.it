@@ -75,7 +75,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "disableHostCheck": true,
+            "disableHostCheck": false,
             "proxyConfig": "src/proxy.conf.json"
           },
           "configurations": {
