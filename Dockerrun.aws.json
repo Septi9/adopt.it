@@ -5,8 +5,7 @@
       "name": "client",
       "image": "monzaj19/adoptitfrontend",
       "hostname": "client",
-      "essential": false,
-      "links": ["server"],
+      "essential": true,
       "memory": 1500,
       "portMappings": [
         {
