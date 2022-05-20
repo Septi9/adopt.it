@@ -7,7 +7,13 @@
       "hostname": "api",
       "essential": false,
       "links": ["mysql"],
-      "memory": 1500
+      "memory": 1500,
+      "portMappings": [
+        {
+          "hostPort": 8080,
+          "containerPort": 8080
+        }
+      ]
     },
     {
       "name": "client",
@@ -15,7 +21,13 @@
       "hostname": "client",
       "essential": false,
       "links": ["server"],
-      "memory": 1500
+      "memory": 1500,
+      "portMappings": [
+        {
+          "hostPort": 4200,
+          "containerPort": 4200
+        }
+      ]
     },
     {
       "environment": [
@@ -47,20 +59,6 @@
           "containerPort": 3306
         }
       ]
-    },
-    {
-      "name": "nginx",
-      "image": "monzaj19/nginx",
-      "hostname": "nginx",
-      "essential": true,
-      "portMappings": [
-        {
-          "hostPort": 80,
-          "containerPort": 80
-        }
-      ],
-      "links": ["client", "server"],
-      "memory": 1500
     }
   ]
 }

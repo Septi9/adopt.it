@@ -8,7 +8,7 @@ import {User} from "../user";
 })
 export class UserService {
 
-  private baseURL = "http://localhost:8080/users";
+  private baseURL = "https://adopt-it.azurewebsites.net/users";
 
   constructor(private httpClient: HttpClient) { }
 

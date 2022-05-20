@@ -47,15 +47,15 @@ services:
     networks:
       - backend
 
-  reverseproxy:
-    image: monzaj19/nginx
-    depends_on:
-      - app-client
-      - app-server
-    ports:
-      - "80:80"
-    volumes:
-      - /var/run/docker.sock:/tmp/docker.sock
+#  reverseproxy:
+#    image: monzaj19/nginx
+#    depends_on:
+#      - app-client
+#      - app-server
+#    ports:
+#      - "80:80"
+#    volumes:
+#      - /var/run/docker.sock:/tmp/docker.sock
 
 
 networks:
