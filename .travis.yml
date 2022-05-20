@@ -8,12 +8,26 @@ services:
 
 before_install:
   - docker build -f ./backend/Back-end/Dockerfile -t monzaj19/adoptitbackend .
+  - docker build -f ./frontend/adoptit-front/Dockerfile -t monzaj19/adoptitfrontend .
 
 script:
   - docker run -d monzaj19/adoptitbackend
+  - docker run -d monzaj19/adoptitfrontend
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
   - docker push monzaj19/adoptitbackend
+  - docker push monzaj19/adoptitfrontend
 
+#deploy:
+#  provider: elasticbeanstalk
+#  region: us-east-1
+#  app: adopt-it-app
+#  env: Adoptitapp-env
+#  bucket_name: elasticbeanstalk-us-east-1-651287844782
+#  bucket_path: adopt-it-app
+#  on:
+#    branch: master
+#  access_key_id: $AWS_ACCESS_KEY
+#  secret_access_key: $AWS_SECRET_KEY
