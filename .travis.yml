@@ -3,6 +3,10 @@ jdk: oraclejdk17
 
 sudo: required
 
+branches:
+  only:
+    -master
+
 services:
   - docker
 
@@ -19,15 +23,3 @@ after_success:
 
   - docker push monzaj19/adoptitbackend
   - docker push monzaj19/adoptitfrontend
-
-#deploy:
-#  provider: elasticbeanstalk
-#  region: us-east-1
-#  app: adopt-it-app
-#  env: Adoptitapp-env
-#  bucket_name: elasticbeanstalk-us-east-1-651287844782
-#  bucket_path: adopt-it-app
-#  on:
-#    branch: master
-#  access_key_id: $AWS_ACCESS_KEY
-#  secret_access_key: $AWS_SECRET_KEY
