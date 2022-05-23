@@ -3,12 +3,10 @@ jdk: oraclejdk17
 
 sudo: required
 
-branches:
-  only:
-    -master
-
 services:
   - docker
+
+if: branch = master
 
 before_install:
   - docker build -f ./backend/Back-end/Dockerfile -t monzaj19/adoptitbackend .
