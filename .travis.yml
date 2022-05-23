@@ -8,9 +8,6 @@ services:
 
 if: branch = master
 
-before_script:
-  - mvn test
-
 before_install:
   - docker build -f ./backend/Back-end/Dockerfile -t monzaj19/adoptitbackend .
   - docker build -f ./frontend/adoptit-front/Dockerfile -t monzaj19/adoptitfrontend .
