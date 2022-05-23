@@ -12,10 +12,10 @@ public class RegisterTest {
 
     @BeforeMethod
     public void before() {
-        System.setProperty("webdriver.chrome.driver", "D:\\BazaIT\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/driver/chromedriver.exe");
 
         webDriver = new ChromeDriver();
-        webDriver.navigate().to("http://localhost:4200/");
+        webDriver.navigate().to("https://adopt.azurewebsites.net/");
 
     }
 
@@ -30,13 +30,13 @@ public class RegisterTest {
         WebElement registerButton = webDriver.findElement(By.className("register"));
         registerButton.click();
         WebElement email = webDriver.findElement(By.name("email"));
-        email.sendKeys("test6@gmail.com");
+        email.sendKeys("test12@gmail.com");
         WebElement username = webDriver.findElement(By.name("username"));
-        username.sendKeys("Test6");
+        username.sendKeys("Test12");
         WebElement password = webDriver.findElement(By.name("accountPassword"));
-        password.sendKeys("test6");
+        password.sendKeys("test12");
         WebElement cpassword = webDriver.findElement(By.name("caccountPassword"));
-        cpassword.sendKeys("test6");
+        cpassword.sendKeys("test12");
         WebElement button = webDriver.findElement(By.className("confirm"));
         button.click();
     }

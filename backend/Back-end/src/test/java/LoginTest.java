@@ -16,7 +16,7 @@ public class LoginTest {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/driver/chromedriver.exe");
 
         webDriver = new ChromeDriver();
-        webDriver.navigate().to("http://localhost:4200/");
+        webDriver.navigate().to("https://adopt.azurewebsites.net/");
 
     }
 
