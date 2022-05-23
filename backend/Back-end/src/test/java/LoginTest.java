@@ -13,7 +13,7 @@ public class LoginTest {
     @BeforeMethod
     public void before() {
 
-        System.setProperty("webdriver.chrome.driver", "D:\\BazaIT\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/driver/chromedriver.exe");
 
         webDriver = new ChromeDriver();
         webDriver.navigate().to("http://localhost:4200/");
