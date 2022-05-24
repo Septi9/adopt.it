@@ -12,6 +12,7 @@ if: branch = master
 
 before_script:
   - wget http://chromedriver.storage.googleapis.com/2.10/chromedriver_linux64.zip
+  - sudo chmod -R 755 ./backend/Back-end/src/test/resources/driver/
   - unzip chromedriver_linux64.zip -d ./backend/Back-end/src/test/resources/driver/
   - export CHROME_BIN=chromium-browser
   - "export DISPLAY=:99.0"
