@@ -13,7 +13,7 @@ if: branch = master
 install: true
 
 script:
-  - mvn -f ./backend/Back-end/pom.xml clean package -DskipTests=true
+  - mvn -f ./backend/Back-end/pom.xml clean compile test
 
 #before_script:
 #  - mvn -f ./backend/Back-end/pom.xml test -B
