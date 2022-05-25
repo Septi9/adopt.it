@@ -45,12 +45,14 @@ mat-toolbar
         & + .hamburger
           & > div
             transform: rotate(135deg)
+            background: white
 
       &:checked
         &:hover
           & + .hamburger
             & > div
               transform: rotate(225deg)
+              background: white
 
 
       &:checked
@@ -59,6 +61,7 @@ mat-toolbar
           &:before
             top: 0
             transform: rotate(90deg)
+            background: white
 
 
       &:checked
@@ -67,6 +70,7 @@ mat-toolbar
             &:after
               top: 0
               transform: rotate(90deg)
+              background: white
 
 
       &:checked
@@ -96,7 +100,6 @@ mat-toolbar
       width: 60px
       height: 60px
       padding: 1rem
-      background: var(--primary-color)
       display: flex
       align-items: center
       justify-content: center
@@ -166,11 +169,11 @@ mat-toolbar
               color: #fff
               font-size: 1.5rem
               padding: 1rem
+              transition: .3s
 
-              & > a
-                color: inherit
-                text-decoration: none
-                transition: color 0.4s ease
+            & > li:hover
+              color: #00faac
+
 
 
 
@@ -207,13 +210,11 @@ mat-toolbar
   .register
     right: 25vw
 
-@media (max-width: 700px)
+@media screen and (max-width: 1200px)
   .menu-wrap
     z-index: 1
-
   .nav-logo
     height: 50%
-
   .nav-button
     display: none
 

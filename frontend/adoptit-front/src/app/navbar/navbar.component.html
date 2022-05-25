@@ -13,18 +13,18 @@
       <div>
         <div>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
+            <li *ngIf="loginService.isUserLoggedIn()" [routerLink]="['/adopt']">Moje konto</li>
+            <li *ngIf="loginService.isUserLoggedIn()" [routerLink]="['/logout']">Wyloguj się</li>
+            <li *ngIf="!loginService.isUserLoggedIn()" [routerLink]="['/registration']">Zarejestruj się</li>
+            <li *ngIf="!loginService.isUserLoggedIn()" [routerLink]="['/login']">Zaloguj się</li>
           </ul>
         </div>
       </div>
     </div>
   </div>
 
-  <button *ngIf="loginService.isUserLoggedIn()" [routerLink]="['/adopt']" type="submit" class="nav-button register">Moje konto</button>
-  <button *ngIf="loginService.isUserLoggedIn()" [routerLink]="['/logout']" type="submit" class="nav-button login">Wyloguj się</button>
-  <button *ngIf="!loginService.isUserLoggedIn()" [routerLink]="['/registration']" type="submit" class="nav-button register">Zarejestruj się</button>
-  <button *ngIf="!loginService.isUserLoggedIn()" [routerLink]="['/login']" type="submit" class="nav-button login">Zaloguj się</button>
+<!--  <button *ngIf="loginService.isUserLoggedIn()" [routerLink]="['/adopt']" type="submit" class="nav-button register">Moje konto</button>-->
+<!--  <button *ngIf="loginService.isUserLoggedIn()" [routerLink]="['/logout']" type="submit" class="nav-button login">Wyloguj się</button>-->
+<!--  <button *ngIf="!loginService.isUserLoggedIn()" [routerLink]="['/registration']" type="submit" class="nav-button register">Zarejestruj się</button>-->
+<!--  <button *ngIf="!loginService.isUserLoggedIn()" [routerLink]="['/login']" type="submit" class="nav-button login">Zaloguj się</button>-->
 </mat-toolbar>
