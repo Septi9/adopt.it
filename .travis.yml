@@ -11,7 +11,7 @@ services:
 if: branch = master
 
 before_script:
-  - mvn tests
+  - mvn test -B
 
 script:
   - docker build -f ./backend/Back-end/Dockerfile -t monzaj19/adoptitbackend .
