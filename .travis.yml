@@ -10,8 +10,10 @@ services:
 
 if: branch = master
 
+install: true
+
 script:
-  - mvn -f ./backend/Back-end/pom.xml test -B
+  - mvn clean package -DskipTests=true
 
 #before_script:
 #  - mvn -f ./backend/Back-end/pom.xml test -B
