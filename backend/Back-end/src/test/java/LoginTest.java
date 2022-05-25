@@ -1,3 +1,4 @@
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,8 +14,8 @@ public class LoginTest {
     @BeforeMethod
     public void before() {
 
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/driver/");
-
+//        System.setProperty("webdriver.chrome.driver", "src/test/resources/driver/");
+        WebDriverManager.chromedriver().setup();
         webDriver = new ChromeDriver();
         webDriver.navigate().to("https://adopt.azurewebsites.net/");
 
