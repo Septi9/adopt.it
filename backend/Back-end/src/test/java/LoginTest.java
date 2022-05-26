@@ -14,8 +14,8 @@ public class LoginTest {
     @BeforeMethod
     public void before() {
 
-//        System.setProperty("webdriver.chrome.driver", "src/test/resources/driver/");
-        WebDriverManager.chromedriver().setup();
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/driver/chromedriver.exe");
+//        WebDriverManager.chromedriver().setup();
         webDriver = new ChromeDriver();
         webDriver.navigate().to("https://adopt.azurewebsites.net/");
 
