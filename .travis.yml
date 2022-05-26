@@ -1,6 +1,6 @@
 language: java
 jdk: oraclejdk17
-script: mvn -f ./backend/Back-end/pom.xml -Dtest=LoginTest test
+script: mvn test
 
 #sudo: required
 #addons:
