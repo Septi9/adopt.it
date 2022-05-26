@@ -10,6 +10,7 @@ import {ViewportScroller} from "@angular/common";
 export class NavbarComponent implements OnInit {
 
   private pageYoffset: number;
+  element
 
   @HostListener('window:scroll', ['$event']) onScroll(event){
     this.pageYoffset = window.pageYOffset;

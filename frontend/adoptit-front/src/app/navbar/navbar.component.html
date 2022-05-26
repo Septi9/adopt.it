@@ -1,9 +1,30 @@
+
+
 <mat-toolbar>
+
   <img [routerLink]="['/']" (click)="scrollToUpFunction()" src="/assets/images/logoadoptit.svg" alt="image" class="nav-logo">
   <span class="example-spacer"></span>
   <div *ngIf="loginService.isUserLoggedIn()" style="margin-right: 200px"></div>
-  <button *ngIf="loginService.isUserLoggedIn()" [routerLink]="['/adopt']" type="submit" class="nav-button register">Moje konto</button>
-  <button *ngIf="loginService.isUserLoggedIn()" [routerLink]="['/logout']" type="submit" class="nav-button login">Wyloguj się</button>
-  <button *ngIf="!loginService.isUserLoggedIn()" [routerLink]="['/registration']" type="submit" class="nav-button register">Zarejestruj się</button>
-  <button *ngIf="!loginService.isUserLoggedIn()" [routerLink]="['/login']" type="submit" class="nav-button login">Zaloguj się</button>
+
+  <div class="menu-wrap">
+    <input type="checkbox" class="toggler">
+    <div class="hamburger"><div></div></div>
+    <div class="menu">
+      <div>
+        <div>
+          <ul>
+            <li *ngIf="loginService.isUserLoggedIn()" [routerLink]="['/adopt']">Moje konto</li>
+            <li *ngIf="loginService.isUserLoggedIn()" [routerLink]="['/logout']">Wyloguj się</li>
+            <li *ngIf="!loginService.isUserLoggedIn()" [routerLink]="['/registration']">Zarejestruj się</li>
+            <li *ngIf="!loginService.isUserLoggedIn()" [routerLink]="['/login']">Zaloguj się</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--  <button *ngIf="loginService.isUserLoggedIn()" [routerLink]="['/adopt']" type="submit" class="nav-button register">Moje konto</button>-->
+<!--  <button *ngIf="loginService.isUserLoggedIn()" [routerLink]="['/logout']" type="submit" class="nav-button login">Wyloguj się</button>-->
+<!--  <button *ngIf="!loginService.isUserLoggedIn()" [routerLink]="['/registration']" type="submit" class="nav-button register">Zarejestruj się</button>-->
+<!--  <button *ngIf="!loginService.isUserLoggedIn()" [routerLink]="['/login']" type="submit" class="nav-button login">Zaloguj się</button>-->
 </mat-toolbar>
