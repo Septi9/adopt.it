@@ -32,8 +32,8 @@ public class Main implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-//        String sql = "INSERT INTO users (first_name, last_name, email, account_password) VALUES (?, ?, ?, ?)";
-//        int result = jdbcTemplate.update(sql, "Jan", "Kowalski", "jan@wp.pl", "haslo123");
+//        String sql = "INSERT INTO user (email_id, user_name, account_password) VALUES (?, ?, ?)";
+//        int result = jdbcTemplate.update(sql, "jan@wp.pl", "Kowalski", "haslo123");
 //
 //        if (result > 0){
 //            System.out.println("A new row has been inserted");

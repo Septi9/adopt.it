@@ -2,18 +2,29 @@ language: java
 jdk: oraclejdk17
 
 sudo: required
-addons:
-  chrome: stable
+#addons:
+#  chrome: stable
 
 services:
   - docker
 
-if: branch = master
-
-install: true
-
+before_install:
+  - docker build -f ./backend/Back-end/Dockerfile -t monzaj19/adoptitbackend .
+  - docker build -f ./frontend/adoptit-front/Dockerfile -t monzaj19/adoptitfrontend .
 script:
-  - mvn clean compile test -f ./backend/Back-end/pom.xml
+  - docker run -d monzaj19/adoptitbackend
+  - docker run -d monzaj19/adoptitfrontend
+after_success:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker push monzaj19/adoptitbackend
+  - docker push monzaj19/adoptitfrontend
+
+#if: branch = master
+#
+#install: true
+#
+#script:
+#  - mvn clean compile test -f ./backend/Back-end/pom.xml
 
 #before_script:
 #  - mvn -f ./backend/Back-end/pom.xml test -B
@@ -30,16 +41,7 @@ script:
 #  - docker push monzaj19/adoptitbackend
 #  - docker push monzaj19/adoptitfrontend
 
-#before_install:
-#  - docker build -f ./backend/Back-end/Dockerfile -t monzaj19/adoptitbackend .
-#  - docker build -f ./frontend/adoptit-front/Dockerfile -t monzaj19/adoptitfrontend .
-#script:
-#  - docker run -d monzaj19/adoptitbackend
-#  - docker run -d monzaj19/adoptitfrontend
-#after_success:
-#  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-#  - docker push monzaj19/adoptitbackend
-#  - docker push monzaj19/adoptitfrontend
+
 
 #install: true
 
