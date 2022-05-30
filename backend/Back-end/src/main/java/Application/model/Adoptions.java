@@ -17,8 +17,7 @@ public class Adoptions {
     public Adoptions() {
     }
 
-    public Adoptions(int id, String email, String animal) {
-        this.id = id;
+    public Adoptions(String email, String animal) {
         this.email = email;
         this.animal = animal;
     }

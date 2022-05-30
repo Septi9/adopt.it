@@ -58,19 +58,6 @@
           width: 100%
           padding: 10px 0
 
-          .txt
-            width: 100%
-            padding: 5px 0
-            margin: 10px 0
-            color: #fff
-            text-align: center
-            font-size: 20px
-            line-height: 20px
-
-            .choice
-              font-weight: normal
-              color: #00faac
-
           .txt2
             width: 100%
             margin: 20px 0
@@ -91,12 +78,12 @@
             input
               padding: 5px 10px
               border: 2px solid #000
-              margin: 0 20px 0 0
+              margin: 10px 20px 0 0
 
             button
               background-color: transparent
               padding: 5px 10px
-              margin: 0 10px
+              margin: 20px 10px 0
               color: #fff
               border: 2px solid #00faac
               transition: 0.3s
@@ -105,6 +92,19 @@
               background-color: #00faac
               color: #000
 
+            div
+              display: inline-block
+              background-color: transparent
+              padding: 5px 10px
+              margin: 20px 10px 0
+              color: #fff
+              border: 2px solid #00faac
+              transition: 0.3s
+              cursor: pointer
+
+            div:hover
+              background-color: #00faac
+              color: #000
 
       .account
         width: 40%
@@ -135,6 +135,25 @@
               margin: 0 10px
               width: 20px
               height: 20px
+
+        .animals_table
+          width: 100%
+          margin: 30px auto 0
+
+          p
+            text-align: center
+
+          .wrap
+            display: flex
+            width: 100%
+
+            .animal
+              width: 30%
+              justify-content: space-between
+              margin: 0 10px
+              text-align: center
+              padding: 5px
+              border: 2px solid #00faac
 
 
 @media (max-width: 816px)

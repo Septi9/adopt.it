@@ -24,6 +24,7 @@ import { Subpage3Component } from './subpage3/subpage3.component';
 import { Subpage4Component } from './subpage4/subpage4.component';
 import { LogoutComponent } from './logout/logout.component';
 import { AdoptpageComponent } from './adoptpage/adoptpage.component';
+import { TestComponent } from './test/test.component';
 
 
 const MATERIAL_MODULES = [
@@ -49,6 +50,7 @@ const MATERIAL_MODULES = [
     Subpage4Component,
     LogoutComponent,
     AdoptpageComponent,
+    TestComponent,
 
 
   ],
