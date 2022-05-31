@@ -21,7 +21,7 @@ public class RegisterTest {
 //        WebDriverManager.chromedriver().setup();
         System.setProperty("webdriver.gecko.driver","src/test/resources/driver/geckodriver.exe");
         webDriver = new FirefoxDriver();
-        webDriver.navigate().to("http://localhost:4200/");
+        webDriver.navigate().to("https://adoptit-site.azurewebsites.net/");
 
     }
 
