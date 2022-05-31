@@ -1,6 +1,8 @@
 language: java
 jdk:
   - openjdk17
+
+script: mvn -f ./backend/Back-end/pom.xml test
 #language: java
 #jdk: oraclejdk17
 #
