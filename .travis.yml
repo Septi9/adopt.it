@@ -1,15 +1,21 @@
+dist: trusty
 language: java
-jdk: oraclejdk17
-
-sudo: required
-#addons:
-#  chrome: stable
-
-services:
-  - docker
-
-before_script:
-  - mvn -f ./backend/Back-end/pom.xml test
+jdk:
+  - openjdk11
+#language: java
+#jdk: oraclejdk17
+#
+#sudo: required
+##addons:
+##  chrome: stable
+#
+#services:
+#  - docker
+#
+#if: branch = master
+#
+#before_script:
+#  - mvn -f ./backend/Back-end/pom.xml test
 
 #before_install:
 #  - docker build -f ./backend/Back-end/Dockerfile -t monzaj19/adoptitbackend .
@@ -22,7 +28,7 @@ before_script:
 #  - docker push monzaj19/adoptitbackend
 #  - docker push monzaj19/adoptitfrontend
 
-#if: branch = master
+
 #
 #install: true
 #
