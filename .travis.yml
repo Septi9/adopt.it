@@ -12,9 +12,20 @@ services:
 
 if: branch = master
 
-before_script:
-  - chmod +x ./backend/Back-end/src/test/resources/driver/geckodriver.exe
-  - mvn -f ./backend/Back-end/pom.xml test
+before_install:
+  - docker build -f ./backend/Back-end/Dockerfile -t monzaj19/adoptitbackend .
+  - docker build -f ./frontend/adoptit-front/Dockerfile -t monzaj19/adoptitfrontend .
+script:
+  - docker run -d monzaj19/adoptitbackend
+  - docker run -d monzaj19/adoptitfrontend
+after_success:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker push monzaj19/adoptitbackend
+  - docker push monzaj19/adoptitfrontend
+
+#before_script:
+#  - chmod +x ./backend/Back-end/src/test/resources/driver/geckodriver.exe
+#  - mvn -f ./backend/Back-end/pom.xml test
 
 #script: mvn -f ./backend/Back-end/pom.xml test
 #language: java
@@ -29,19 +40,7 @@ before_script:
 #
 #if: branch = master
 #
-#before_script:
-#  - mvn -f ./backend/Back-end/pom.xml test
 
-#before_install:
-#  - docker build -f ./backend/Back-end/Dockerfile -t monzaj19/adoptitbackend .
-#  - docker build -f ./frontend/adoptit-front/Dockerfile -t monzaj19/adoptitfrontend .
-#script:
-#  - docker run -d monzaj19/adoptitbackend
-#  - docker run -d monzaj19/adoptitfrontend
-#after_success:
-#  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-#  - docker push monzaj19/adoptitbackend
-#  - docker push monzaj19/adoptitfrontend
 
 
 #

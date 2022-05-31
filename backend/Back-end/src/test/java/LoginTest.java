@@ -12,7 +12,7 @@ public class LoginTest {
 
     private WebDriver webDriver;
 
-    private int waitLimit = 3000;
+    private int waitLimit = 8000;
 
     @BeforeMethod
     public void before() {
@@ -21,7 +21,7 @@ public class LoginTest {
         System.setProperty("webdriver.gecko.driver","src/test/resources/driver/geckodriver.exe");
 //        WebDriverManager.chromedriver().setup();
         webDriver = new FirefoxDriver();
-        webDriver.navigate().to("http://localhost:4200/");
+        webDriver.navigate().to("https://adoptit-site.azurewebsites.net/");
 
     }
 
