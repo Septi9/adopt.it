@@ -13,7 +13,7 @@ services:
 if: branch = master
 
 before_script:
-  - chmod +x ./backend/Back-end/src/test/resources/driver/geckodriver
+  - chmod +x ./backend/Back-end/src/test/resources/driver/geckodriver.exe
   - mvn -f ./backend/Back-end/pom.xml test
 
 #script: mvn -f ./backend/Back-end/pom.xml test
