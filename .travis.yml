@@ -5,10 +5,9 @@ jdk:
   - openjdk17
 
 addons:
-  chrome: stable
+  firefox: latest
 
-before_install:
-  - export DISPLAY=:99.0
+
 
 #script: mvn -f ./backend/Back-end/pom.xml test
 #language: java

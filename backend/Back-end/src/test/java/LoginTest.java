@@ -3,6 +3,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -17,15 +18,16 @@ public class LoginTest {
     public void before() {
 
 //        System.setProperty("webdriver.chrome.driver", "src/test/resources/driver/");
-        WebDriverManager.chromedriver().setup();
-        webDriver = new ChromeDriver();
+        System.setProperty("webdriver.gecko.driver","src/test/resources/driver/geckodriver.exe");
+//        WebDriverManager.chromedriver().setup();
+        webDriver = new FirefoxDriver();
         webDriver.navigate().to("http://localhost:4200/");
 
     }
 
     @AfterMethod
     public void after() throws InterruptedException {
-        webDriver.close();
+//        webDriver.close();
         webDriver.quit();
     }
 
