@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
       },
       error => {
         console.log("exception occured");
-        this.msg = "Bad credentials, please enter valid email id and password";
+        this.msg = "Niepoprawne dane wejściowe, sprawdź login i hasło.";
       }
     )
   }

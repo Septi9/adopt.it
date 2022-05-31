@@ -11,13 +11,15 @@ public class LoginTest {
 
     private WebDriver webDriver;
 
+    private int waitLimit = 3000;
+
     @BeforeMethod
     public void before() {
 
 //        System.setProperty("webdriver.chrome.driver", "src/test/resources/driver/");
         WebDriverManager.chromedriver().setup();
         webDriver = new ChromeDriver();
-        webDriver.navigate().to("https://adopt.azurewebsites.net/");
+        webDriver.navigate().to("http://localhost:4200/");
 
     }
 
@@ -28,13 +30,20 @@ public class LoginTest {
     }
 
     @Test
-    public void method() {
+    public void method(){
+        WebElement hamburger = webDriver.findElement(By.className("toggler"));
+        hamburger.click();
+        try{
+            Thread.sleep(waitLimit);
+        }catch(InterruptedException e){
+
+        }
         WebElement loginButton = webDriver.findElement(By.className("login"));
         loginButton.click();
         WebElement email = webDriver.findElement(By.name("email"));
-        email.sendKeys("abc@wp.pl");
+        email.sendKeys("jan@wp.pl");
         WebElement password = webDriver.findElement(By.name("accountPassword"));
-        password.sendKeys("nanaa");
+        password.sendKeys("haslo123");
         WebElement button = webDriver.findElement(By.className("confirm"));
         button.click();
     }

@@ -15,8 +15,8 @@
           <ul>
             <li *ngIf="loginService.isUserLoggedIn()" [routerLink]="['/adopt']">Moje konto</li>
             <li *ngIf="loginService.isUserLoggedIn()" [routerLink]="['/logout']">Wyloguj się</li>
-            <li *ngIf="!loginService.isUserLoggedIn()" [routerLink]="['/registration']">Zarejestruj się</li>
-            <li *ngIf="!loginService.isUserLoggedIn()" [routerLink]="['/login']">Zaloguj się</li>
+            <li *ngIf="!loginService.isUserLoggedIn()" [routerLink]="['/registration']" class="register">Zarejestruj się</li>
+            <li *ngIf="!loginService.isUserLoggedIn()" [routerLink]="['/login']" class="login">Zaloguj się</li>
           </ul>
         </div>
       </div>
