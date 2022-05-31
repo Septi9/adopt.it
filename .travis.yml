@@ -7,7 +7,13 @@ jdk:
 addons:
   firefox: latest
 
+services:
+  - docker
 
+if: branch = master
+
+before_script:
+  - mvn -f ./backend/Back-end/pom.xml test
 
 #script: mvn -f ./backend/Back-end/pom.xml test
 #language: java
