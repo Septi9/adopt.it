@@ -1,7 +1,7 @@
 {
   "/api": {
-    "target": "https://adopt-it.azurewebsites.net/",
-    "process.env.PROXY_API":  "https://adopt-it.azurewebsites.net/",
+    "target": "https://adopt-backend.azurewebsites.net/",
+    "process.env.PROXY_API":  "https://adopt-backend.azurewebsites.net/",
     "secure": false
   }
 }

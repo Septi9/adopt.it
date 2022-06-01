@@ -11,8 +11,8 @@ import {User} from "../user";
 })
 export class AdoptService {
 
-  private baseURL = "http://localhost:8080/adoptions";
-  private baseURLPost = "http://localhost:8080/adoptions-post";
+  private baseURL = "https://adopt-backend.azurewebsites.net/adoptions";
+  private baseURLPost = "https://adopt-backend.azurewebsites.net/adoptions-post";
   // private baseURL = "https://adopt-it.azurewebsites.net/adoptions-post";
 
   constructor(private http: HttpClient) { }
