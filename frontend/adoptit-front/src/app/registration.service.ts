@@ -11,19 +11,11 @@ export class RegistrationService {
   constructor( private _http : HttpClient) { }
 
   public loginUserFromRemote(user :User):Observable<any> {
-<<<<<<< HEAD
-    return this._http.post<any>("http://localhost:8080/login", user)
-  }
-
-  public registerUserFromRemote(user :User):Observable<any> {
-    return this._http.post<any>("http://localhost:8080/registeruser", user)
-=======
     return this._http.post<any>("https://adopt-backend.azurewebsites.net/login", user)
   }
 
   public registerUserFromRemote(user :User):Observable<any> {
     return this._http.post<any>("https://adopt-backend.azurewebsites.net/registeruser", user)
->>>>>>> adopts
   }
 
 }

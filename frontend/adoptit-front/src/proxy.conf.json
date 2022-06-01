@@ -1,12 +1,7 @@
 {
   "/api": {
-<<<<<<< HEAD
-    "target": "http://localhost:8080/",
-    "process.env.PROXY_API":  "http://localhost:8080/",
-=======
     "target": "https://adopt-backend.azurewebsites.net/",
     "process.env.PROXY_API":  "https://adopt-backend.azurewebsites.net/",
->>>>>>> adopts
     "secure": false
   }
 }
