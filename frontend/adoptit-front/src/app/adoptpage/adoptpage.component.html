@@ -11,14 +11,15 @@
           <div (click)="getAnimal('Łoś')" class="gallery moose"></div>
         </div>
         <div class="adoptAnimal">
-          <p class="txt">Twój wybór to: <span class="choice">{{animal}}</span></p>
-          <form #adopt="ngForm">
-            <label>Email:</label>
-            <input type="email" name="email" value="{{sessionValue}}">
-            <button type="submit">Adoptuj</button>
-            <button (click)="getAnimal('')" class="disable">Odznacz swój wybór</button>
+          <form #adopt="ngForm" (ngSubmit)="success()" onSubmit="return confirm('Jesteś pewny, że chcesz adoptować zwierzę?');">
+            <label for="email">Email:</label>
+            <input type="email" name="email" [(ngModel)]="adoptions.email" #email="ngModel" readonly="readonly">
+            <label for="animal">Twój wybór to:</label>
+            <input type="text" name="animal" [(ngModel)]="adoptions.animal" #email="ngModel" readonly="readonly">
+            <button [disabled]="adopt.form.invalid" class="adopt_btn" type="submit" onClick="window.location.reload();">Adoptuj</button>
+            <div (click)="getAnimal('')" class="disable adopt_btn">Odznacz swój wybór</div>
           </form>
-          <p class="txt2">Wybierz zwierzę, które chcesz adoptować i podaj swój email, a my wyślemy ci potwierdzenie adopcji.</p>
+          <p class="txt2">Wybierz zwierzę, które chcesz adoptować.</p>
         </div>
       </div>
       <div class="account">
@@ -43,15 +44,19 @@
             </ng-container>
           </tbody>
         </table>
-        <form #changepasswordform="ngForm">
-          <label for="pwd">Chcesz zmienić hasło?</label>
-          <input type="password" name="accountPassword" placeholder="Podaj nowe hasło" (ngModel)="user.accountPassword" #caccountPassword="ngModel" required
-                 [class.is-invalid]="caccountPassword.invalid && caccountPassword.touched">
-          <button [disabled]="changepasswordform.form.invalid" type="submit" class="confirm">Zmień hasło</button>
-        </form>
+        <div class="animals_table">
+          <p>Twoje adoptowane zwierzęta</p>
+          <div class="wrap">
+            <ng-container *ngFor = "let adopt of animals">
+              <div class="animal" *ngIf="adopt.email == sessionValue">
+                <span>{{adopt.animal}}</span>
+              </div>
+            </ng-container>
+          </div>
+
+        </div>
       </div>
     </div>
   </div>
-
   <app-footer></app-footer>
 </div>

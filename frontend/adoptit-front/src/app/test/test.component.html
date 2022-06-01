@@ -1,0 +1,14 @@
+<form #adoptForm="ngForm" (ngSubmit)="success()">
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" class="form-control" placeholder="Podaj email" name="email" [(ngModel)]="adoptions.email" #email="ngModel" required pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$">
+  </div>
+
+  <div>
+    <label for="amimal">Zwierzę:</label>
+    <input type="text" class="form-control" name="animal" [(ngModel)]="adoptions.animal" #animal="ngModel" required
+           [class.is-invalid]="animal.invalid && animal.touched"
+    >
+  </div>
+  <button [disabled]="adoptForm.form.invalid" type="submit" class="confirm">Zarejestruj się</button>
+</form>
