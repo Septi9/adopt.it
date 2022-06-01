@@ -19,8 +19,8 @@ public class RegisterTest {
 //        System.setProperty("webdriver.chrome.driver", "src/test/resources/driver/");
 
 //        WebDriverManager.chromedriver().setup();
-//        System.setProperty("webdriver.gecko.driver","src/test/resources/driver/geckodriver.exe");
-        System.setProperty("webdriver.gecko.driver","src/test/resources/CIdriver/geckodriver");
+        System.setProperty("webdriver.gecko.driver","src/test/resources/driver/geckodriver.exe");
+//        System.setProperty("webdriver.gecko.driver","src/test/resources/CIdriver/geckodriver");
         webDriver = new FirefoxDriver();
         webDriver.navigate().to("https://adoptit-site.azurewebsites.net/");
 
