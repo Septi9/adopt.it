@@ -1,5 +1,9 @@
 C:\MyFiles\Programming\Projekt_NWTA\adopt.it\backend\Back-end\src\main\java\Application\repository\RegistrationRepository.java
+C:\MyFiles\Programming\Projekt_NWTA\adopt.it\backend\Back-end\src\main\java\Application\controller\AdoptionsController.java
+C:\MyFiles\Programming\Projekt_NWTA\adopt.it\backend\Back-end\src\main\java\Application\model\Adoptions.java
+C:\MyFiles\Programming\Projekt_NWTA\adopt.it\backend\Back-end\src\main\java\Application\repository\AdoptionsRepository.java
 C:\MyFiles\Programming\Projekt_NWTA\adopt.it\backend\Back-end\src\main\java\Application\Main.java
 C:\MyFiles\Programming\Projekt_NWTA\adopt.it\backend\Back-end\src\main\java\Application\model\User.java
 C:\MyFiles\Programming\Projekt_NWTA\adopt.it\backend\Back-end\src\main\java\Application\service\RegistrationService.java
+C:\MyFiles\Programming\Projekt_NWTA\adopt.it\backend\Back-end\src\main\java\Application\service\AdoptionsService.java
 C:\MyFiles\Programming\Projekt_NWTA\adopt.it\backend\Back-end\src\main\java\Application\controller\RegistrationController.java

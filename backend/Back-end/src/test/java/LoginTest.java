@@ -18,6 +18,7 @@ public class LoginTest {
     public void before() {
 
 //        System.setProperty("webdriver.chrome.driver", "src/test/resources/driver/");
+//        System.setProperty("webdriver.gecko.driver","src/test/resources/driver/geckodriver.exe");
         System.setProperty("webdriver.gecko.driver","src/test/resources/CIdriver/geckodriver");
 //        WebDriverManager.chromedriver().setup();
         webDriver = new FirefoxDriver();
